@@ -1,25 +1,24 @@
 import React from 'react';
-import { makeStyles } from '@material-ui/core/styles';
-import { Card, CardMedia, CardContent, CardActions, CardActionArea } from "@material-ui/core";
-import { IconButton } from "@material-ui/core";
-import Typography from '@material-ui/core/Typography';
+import { makeStyles, Card, CardMedia, CardContent, CardActions, CardActionArea, IconButton, Link, Typography } from "@material-ui/core";
 import GitHubIcon from "@material-ui/icons/GitHub";
 
-const useStyles = makeStyles({
+const useStyles = makeStyles(theme => ({
     card: {
         width: 345,
+        marginBottom: theme.spacing(8)
     },
     media: {
         height: 200,
     },
-});
+}));
 
 export default function MediaCard(props) {
     const classes = useStyles();
 
     return (
         <Card className={classes.card}>
-            <CardActionArea>
+           <Link href={props.heroku} color="inherit" underline="none" target="_blank" rel="noopener"> 
+           <CardActionArea>
                 <CardMedia
                     className={classes.media}
                     image={props.image}
@@ -34,10 +33,11 @@ export default function MediaCard(props) {
                     </Typography>
                 </CardContent>
             </CardActionArea>
+            </Link>
             <CardActions>
-                <a href={props.github} target="_blank" rel="noopener noreferrer">
+                <Link href={props.github} target="_blank" rel="noopener">
                     <IconButton><GitHubIcon className={classes.icons} fontSize="large" aria-label="github" /></IconButton>
-                </a>
+                </Link>
             </CardActions>
         </Card>
     );

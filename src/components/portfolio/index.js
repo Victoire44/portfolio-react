@@ -1,5 +1,5 @@
 import React from "react";
-import { Container, Typography, Box, makeStyles } from "@material-ui/core/";
+import { Container, Typography, Box, makeStyles, Divider } from "@material-ui/core/";
 import Card from "../Card";
 import memory from "../Portfolio/assets/memorygame.png";
 import bamazon from "../Portfolio/assets/bamazon.png";
@@ -19,10 +19,9 @@ const useStyles = makeStyles({
     card: {
         display: "flex",
         flexWrap: "wrap",
-        justifyContent: "space-between"
-
+        justifyContent: "space-between",
     }
-})
+});
 
 
 export default function Portfolio() {
@@ -31,7 +30,10 @@ export default function Portfolio() {
     return (
         <div>
             <Container>
-                <Typography variant="h3" align="center" my={2}>Portfolio</Typography>
+                <Box my={10} >
+                    <Typography variant="h3" align="center" my={2}>Portfolio</Typography>
+                    <Divider />
+                </Box>
                 <Box className={classes.card}>
                     <Card
                         image={memory}
@@ -39,6 +41,7 @@ export default function Portfolio() {
                         alt="Animals Memory Game"
                         text="Command line app with band in town, Spotify, OMDB APIs."
                         github="https://github.com/Victoire44/clicky-game"
+                        heroku="https://victoire44.github.io/clicky-game"
                     />
                     <Card
                         image={wordguess}
@@ -46,6 +49,7 @@ export default function Portfolio() {
                         alt="Word Guess Game"
                         text="Word Guessing game created in javaScript where users can guess missing letters of a given word."
                         github="https://github.com/Victoire44/Word-Guess-Game"
+                        heroku="https://victoire44.github.io/Word-Guess-Game"
                     />
                     <Card
                         image={netflix}
@@ -53,6 +57,7 @@ export default function Portfolio() {
                         alt="Netflix Gif"
                         text="App that displays many gifs on Netflix series that are pulled from the Giphy API using Ajax calls."
                         github="https://github.com/Victoire44/GifTastic"
+                        heroku="https://victoire44.github.io/GifTastic/"
                     />
                     <Card
                         image={icecream}
@@ -60,6 +65,7 @@ export default function Portfolio() {
                         alt="Ice Cream Game"
                         text="Guessing game built with jQuery. You win the game by matching your total score to random number."
                         github="https://github.com/Victoire44/unit-4-game"
+                        heroku="https://victoire44.github.io/unit-4-game"
 
                     />
                     <Card
@@ -68,7 +74,7 @@ export default function Portfolio() {
                         alt="Google Books Search"
                         text="Full Stack app to display books based on user searches. Use of Express and MongoDB so that users can save books to review or purchase later"
                         github="https://github.com/Victoire44/Google-Books-Search"
-
+                        heroku="https://google-books-search-vb.herokuapp.com/"
                     />
                     <Card
                         image={trainscheduler}
@@ -76,6 +82,7 @@ export default function Portfolio() {
                         alt="Train Scheduler"
                         text="Built a train schedule app that incorporates Firebase to host arrival and departure data."
                         github="https://github.com/Victoire44/Train-Scheduler"
+                        heroku="https://github.com/Victoire44/Train-Scheduler"
                     />
                     <Card
                         image={burger}
@@ -83,6 +90,7 @@ export default function Portfolio() {
                         alt="Eat-Da-Burger"
                         text="Eat-Da-Burger is a restaurant app that lets users input the names of burgers they'd like to eat."
                         github="https://github.com/Victoire44/burger"
+                        heroku="https://burger-vb.herokuapp.com"
                     />
                     <Card
                         image={bamazon}
@@ -93,17 +101,20 @@ export default function Portfolio() {
                     />
                     <Card
                         image={liri}
-                        title="liri"
-                        alt="liri"
+                        title="Liri"
+                        alt="Liri"
                         text="Click on an image to earn points, but don't click on any more than once!"
                         github="https://github.com/Victoire44/liri-node-app"
                     />
                 </Box>
-                <Typography variant="h3" align="center" my={2}>Projects Team</Typography>
+                <Box my={10}>
+                    <Typography variant="h3" align="center" my={2}>Projects Team</Typography>
+                    <Divider />
+                </Box>
                 <Box className={classes.card}>
-                <Card
+                    <Card
                         image={campdad}
-                        title="campDad"
+                        title="CampDad"
                         alt="CampDad"
                         text="Campsite search application"
                         github="https://github.com/Victoire44/project1"
@@ -117,8 +128,8 @@ export default function Portfolio() {
                     />
                     <Card
                         image={purrfectmatch}
-                        title="Purrfect match"
-                        alt="Purrfect match"
+                        title="Purr-fect Match"
+                        alt="Purr-fect Match"
                         text="Pet adoption service"
                         github="https://github.com/Victoire44/Purr-fect-Match"
                     />

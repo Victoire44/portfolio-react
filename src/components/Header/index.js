@@ -1,27 +1,18 @@
 import React from "react";
-import { makeStyles } from "@material-ui/core";
+import { makeStyles, Typography, Box, AppBar, Toolbar } from "@material-ui/core";
 import { Parallax } from "react-parallax";
-import { AppBar, Toolbar, IconButton, Typography, Box, Link } from "@material-ui/core";
 import Container from "@material-ui/core/Container";
-import LinkedInIcon from '@material-ui/icons/LinkedIn';
-import EmailIcon from "@material-ui/icons/Email";
-import GitHubIcon from "@material-ui/icons/GitHub";
 import portrait from "./assets/portrait.jpg";
-
+import Contact from "../Contact"
 
 
 const useStyles = makeStyles(theme => ({
-    links: {
-        marginLeft: "auto",
-    },
-    padding: {
-        padding: theme.spacing(1)
-    },
-    icons: {
-        fill: props => props.color,
-    },
     appbar: {
-        backgroundColor: "#252834",
+        background: "#252834",
+    },
+    contact: {
+        display: "flex",
+        justifyContent: "flex-end",
     },
     box: {
         background: "#252834",
@@ -49,7 +40,7 @@ const useStyles = makeStyles(theme => ({
     intro: {
         padding: theme.spacing(10, 10),
         minHeight: 250,
-    }, 
+    },
 }))
 
 export default function Header() {
@@ -60,24 +51,8 @@ export default function Header() {
         <div>
             <AppBar position="static" className={classes.appbar}>
                 <Container>
-                    <Toolbar>
-                        <Box className={classes.links}>
-                            <Link href="https://github.com/Victoire44" target="_blank">
-                                <IconButton className={classes.padding}>
-                                    <GitHubIcon className={classes.icons} fontSize="large" aria-label="github" />
-                                </IconButton>
-                            </Link>
-                            <Link href="https://www.linkedin.com/in/victoirebaron/?locale=en_US" target="_blank">
-                                <IconButton className={classes.padding}>
-                                    <LinkedInIcon className={classes.icons} fontSize="large" aria-label="linkedin" />
-                                </IconButton>
-                            </Link>
-                            <Link href="mailto:victoirebaron@hotmail.fr" target="_blank" >
-                                <IconButton className={classes.padding}>
-                                    <EmailIcon className={classes.icons} fontSize="large" aria-label="email" />
-                                </IconButton>
-                            </Link>
-                        </Box>
+                    <Toolbar className={classes.contact}>
+                        <Contact />
                     </Toolbar>
                 </Container>
             </AppBar>

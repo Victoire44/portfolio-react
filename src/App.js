@@ -1,8 +1,9 @@
 import React from 'react';
+import { createMuiTheme, ThemeProvider } from "@material-ui/core";
 import Header from './components/Header';
 import Skills from "./components/Skills";
 import Portfolio from "./components/Portfolio";
-import { createMuiTheme, ThemeProvider } from "@material-ui/core";
+import Footer from "./components/Footer";
 
 const theme = createMuiTheme({
   spacing: 5,
@@ -10,12 +11,13 @@ const theme = createMuiTheme({
 
 export default function App() {
   return (
-    <div className="App">
+    <div>
       <ThemeProvider theme={theme}>
         <Header />
         <Skills />
         <Portfolio />
+        <Footer />
       </ThemeProvider>
     </div>
-  );
+  )
 }

@@ -1,7 +1,5 @@
 import React from "react";
-import { makeStyles } from '@material-ui/core/styles';
-import { CardHeader } from '@material-ui/core/';
-import { Container, Typography, Paper, Box } from "@material-ui/core/";
+import { makeStyles, CardHeader, Container, Typography, Paper, Box } from "@material-ui/core/";
 import html from "./assets/html.svg";
 import css from "./assets/css.png";
 import bootstrap from "./assets/bootstrap.png";
@@ -20,9 +18,8 @@ const useStyles = makeStyles({
         height: 80,
     },
     skills: {
-       flex: "auto",
-       flexWrap: "wrap"
-
+        flex: "auto",
+        flexWrap: "wrap"
     },
 });
 
@@ -32,7 +29,9 @@ export default function Skills() {
     return (
         <div>
             <Container>
-                <Typography variant="h3" align="center">Skills</Typography>
+                <Box mt={10}>
+                    <Typography variant="h3" align="center">Skills</Typography>
+                </Box>
                 <Paper elevation={1}>
                     <CardHeader
                         align="center"
