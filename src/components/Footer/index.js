@@ -6,7 +6,6 @@ const useStyles = makeStyles({
    contact: {
         background: "#19232f",
         height: "115px",
-        marginTop: "50px"
     },
     toolbar: {
         display: "flex",
@@ -24,7 +23,7 @@ export default function Footer() {
     const classes = useStyles();
 
     return (
-        <div>
+        <div id="footer">
             <AppBar position="static" className={classes.contact}>
                 <Container>
                     <Toolbar className={classes.toolbar}>

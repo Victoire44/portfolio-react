@@ -10,9 +10,6 @@ import liri from "../Portfolio/assets/liri.png";
 import trainscheduler from "../Portfolio/assets/train-scheduler.png";
 import wordguess from "../Portfolio/assets/word-guess-game.png";
 import netflix from "../Portfolio/assets/netflix.png";
-import purrfectmatch from "../Portfolio/assets/purr-fect-match.png"
-import campdad from "../Portfolio/assets/campdad.png"
-import campmom from "../Portfolio/assets/campmom.png"
 
 
 const useStyles = makeStyles({
@@ -28,10 +25,10 @@ export default function Portfolio() {
     const classes = useStyles();
 
     return (
-        <div>
-            <Container>
-                <Box my={10} >
-                    <Typography variant="h3" align="center" my={2}>Portfolio</Typography>
+        <div id="portfolio">
+            <Container style={{ width: "1100px" }}>
+                <Box my={10}>
+                    <Typography variant="h3" data-aos="fade-right" data-aos-duration="1000">Portfolio</Typography>
                     <Divider />
                 </Box>
                 <Box className={classes.card}>
@@ -107,34 +104,6 @@ export default function Portfolio() {
                         github="https://github.com/Victoire44/liri-node-app"
                     />
                 </Box>
-                <Box my={10}>
-                    <Typography variant="h3" align="center" my={2}>Projects Team</Typography>
-                    <Divider />
-                </Box>
-                <Box className={classes.card}>
-                    <Card
-                        image={campdad}
-                        title="CampDad"
-                        alt="CampDad"
-                        text="Campsite search application"
-                        github="https://github.com/Victoire44/project1"
-                    />
-                    <Card
-                        image={campmom}
-                        title="CampMom"
-                        alt="CampMom"
-                        text="Campsite search application in React"
-                        github="https://github.com/Victoire44/CampMom"
-                    />
-                    <Card
-                        image={purrfectmatch}
-                        title="Purr-fect Match"
-                        alt="Purr-fect Match"
-                        text="Pet adoption service"
-                        github="https://github.com/Victoire44/Purr-fect-Match"
-                    />
-                </Box>
-
             </Container>
         </div>
     )
