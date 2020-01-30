@@ -1,10 +1,9 @@
 import React from "react";
-import { makeStyles, Typography, Box, AppBar, Toolbar} from "@material-ui/core";
+import { makeStyles, Typography, Box, AppBar, Toolbar } from "@material-ui/core";
 import { Parallax } from "react-parallax";
 import Container from "@material-ui/core/Container";
 import Contact from "../Contact";
-import { Link, animateScroll as scroll } from 'react-scroll'
-import HomeIcon from '@material-ui/icons/Home';
+import { Link, animateScroll as scroll } from "react-scroll";
 
 const useStyles = makeStyles(theme => ({
     appbar: {
@@ -57,8 +56,16 @@ export default function Header() {
                 <Container>
                     <Toolbar>
                         <Box className={classes.menu}>
-                            <Link to="#">
-                                    <HomeIcon aria-label="home" style={{color:"white"}}/>
+                            <Link
+                                to="header"
+                                smooth={true}
+                                spy={true}
+                                duration={600}
+                                variant="h6"
+                                color="inherit"
+                                underline="none"
+                                className={classes.hover}>
+                                VB
                             </Link>
                             <Link
                                 to="about"

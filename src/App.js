@@ -6,7 +6,9 @@ import Skills from "./components/Skills";
 import Portfolio from "./components/Portfolio";
 import Projects from "./components/Projects";
 import Footer from "./components/Footer";
-
+import { Helmet } from "react-helmet";
+import FaviconSvg from "./assets/favicon.svg";
+import FaviconPng from "./assets/favicon.png";
 
 
 const theme = createMuiTheme({
@@ -16,6 +18,11 @@ const theme = createMuiTheme({
 export default function App() {
   return (
     <div>
+      <Helmet>
+        <link rel="icon" type="image/svg+xml" href={FaviconSvg}/>
+        <link rel="icon" type="image/png" href={FaviconPng}/>
+        <title>Victoire Baron</title>
+      </Helmet>
       <ThemeProvider theme={theme}>
         <Header />
         <About />
