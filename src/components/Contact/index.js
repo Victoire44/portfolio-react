@@ -1,5 +1,5 @@
 import React from "react";
-import { makeStyles, IconButton, Box, Link } from "@material-ui/core";
+import { makeStyles, IconButton, Link } from "@material-ui/core";
 import LinkedInIcon from '@material-ui/icons/LinkedIn';
 import EmailIcon from "@material-ui/icons/Email";
 import GitHubIcon from "@material-ui/icons/GitHub";
@@ -18,7 +18,7 @@ export default function Icons(props) {
     const classes = useStyles(props);
 
     return (
-        <Box>
+        <div>
             <Link href="https://github.com/Victoire44" target="_blank">
                 <IconButton className={classes.padding}>
                     <GitHubIcon className={classes.icons} fontSize="large" aria-label="github" />
@@ -34,6 +34,6 @@ export default function Icons(props) {
                     <EmailIcon className={classes.icons} fontSize="large" aria-label="email" />
                 </IconButton>
             </Link>
-        </Box>
+        </div>
     )
 }

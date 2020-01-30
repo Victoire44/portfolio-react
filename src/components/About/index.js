@@ -5,7 +5,7 @@ import { Timeline, Event } from "react-timeline-scribble";
 import { Fragment } from "react";
 
 const useStyles = makeStyles(theme => ({
-    about: {
+    root: {
         height: "100vh",
         width: "100%",
         backgroundSize: "cover",
@@ -14,6 +14,9 @@ const useStyles = makeStyles(theme => ({
         display: "flex",
         flexDirection: "column",
         justifyContent: "center",
+        "& .MuiGrid-grid-md-8":{
+            paddingRight: "50px"
+        }
     },
     portrait: {
         height: 250,
@@ -28,28 +31,30 @@ export default function About() {
     const classes = useStyles();
 
     return (
-        <div id="about" className={classes.about}>
+        <div id="about" className={classes.root}>
             <Container style={{ width: "1100px" }}>
                 <Grid container>
-                    <Grid item md={8}>
-                        <Box mb={10} >
+                    <Grid item md={12}>
+                        <Box mb={10}>
                             <Typography variant="h3" data-aos="fade-right" data-aos-duration="1000"> Hello, I'm Victoire</Typography>
                             <Divider />
                         </Box>
+                    </Grid>
+                    <Grid item md={8}>
                         <img
                             src={portrait}
                             className={classes.portrait}
                             alt="portrait"
                         />
                         <Typography paragraph>
-                            I am an ambitious Web Developer living in San Francisco.
+                            I'm an ambitious Web Developer living in San Francisco.
                             Certified Full-Stack Web Developer at UC Berkeley, I am equipped with the skills needed to create effective application from creation to excecution.
                             My purpose is to develop powerful products with fast user interface and optimized performance while getting an attractive UI/UX interfaces.
                              </Typography>
                         <Typography paragraph>
                             My background in Art History makes me think creatively with an artistic outlook. I think of
                                 the interface like a painting where I seek to create harmony and a good balance between the
-                                color and components. I really enjoy to work with React.js and material UI to get a clean and modern design/UI.
+                                color and components. I really enjoy to work with React.js and material UI to get a clean and modern design.
                             </Typography>
                     </Grid>
                     <Grid item md={4}>

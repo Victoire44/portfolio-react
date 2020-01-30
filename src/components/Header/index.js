@@ -1,5 +1,5 @@
 import React from "react";
-import { makeStyles, Typography, Box, AppBar, Toolbar } from "@material-ui/core";
+import { makeStyles, Typography, AppBar, Toolbar } from "@material-ui/core";
 import { Parallax } from "react-parallax";
 import Container from "@material-ui/core/Container";
 import Contact from "../Contact";
@@ -55,16 +55,16 @@ export default function Header() {
             <AppBar className={classes.appbar}>
                 <Container>
                     <Toolbar>
-                        <Box className={classes.menu}>
+                        <Typography className={classes.menu}>
                             <Link
                                 to="header"
                                 smooth={true}
                                 spy={true}
                                 duration={600}
                                 variant="h6"
-                                color="inherit"
                                 underline="none"
-                                className={classes.hover}>
+                                className={classes.hover}
+                            >
                                 VB
                             </Link>
                             <Link
@@ -73,9 +73,9 @@ export default function Header() {
                                 spy={true}
                                 duration={600}
                                 variant="h6"
-                                color="inherit"
                                 underline="none"
-                                className={`${classes.menuItem} ${classes.hover}`}>
+                                className={`${classes.menuItem} ${classes.hover}`}
+                            >
                                 ABOUT
                             </Link>
                             <Link
@@ -84,32 +84,21 @@ export default function Header() {
                                 spy={true}
                                 duration={600}
                                 variant="h6"
-                                color="inherit"
                                 underline="none"
-                                className={`${classes.menuItem} ${classes.hover}`}>
+                                className={`${classes.menuItem} ${classes.hover}`}
+                            >
                                 SKILLS
                             </Link>
                             <Link
-                                to="portfolio"
+                                to="projects"
                                 smooth={true}
                                 spy={true}
                                 duration={600}
                                 variant="h6"
-                                color="inherit"
                                 className={`${classes.menuItem} ${classes.hover}`}
                                 underline="none">
-                                PORTFOLIO</Link>
-                            <Link
-                                to="projects_team"
-                                smooth={true}
-                                spy={true}
-                                duration={600}
-                                variant="h6"
-                                color="inherit"
-                                className={`${classes.menuItem} ${classes.hover}`}
-                                underline="none">
-                                TEAM PROJECTS</Link>
-                        </Box>
+                                PROJECTS</Link>
+                        </Typography>
                         <Contact />
                     </Toolbar>
                 </Container>
@@ -117,9 +106,9 @@ export default function Header() {
 
             <Parallax
                 className={classes.parallax}
-                bgImage={require('./assets/background.jpg')}
+                bgImage={require('./assets/test.jpg')}
                 bgImageAlt="background"
-                strength={200}
+                strength={250}
             >
                 <Typography variant="h2" className={classes.name} data-aos="fade-right" data-aos-duration="1500">Victoire Baron</Typography>
                 <Typography className={classes.title} variant="h4" data-aos="fade-left" data-aos-duration="1500"> Web Developer</Typography>

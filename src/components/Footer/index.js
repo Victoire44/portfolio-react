@@ -26,6 +26,8 @@ export default function Footer() {
         <div id="footer">
             <AppBar position="static" className={classes.contact}>
                 <Container>
+                <Typography>victoirebaron@hotmail.fr</Typography>
+
                     <Toolbar className={classes.toolbar}>
                         <Contact />
                     </Toolbar>

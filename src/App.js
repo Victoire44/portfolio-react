@@ -3,7 +3,6 @@ import { createMuiTheme, ThemeProvider } from "@material-ui/core";
 import Header from "./components/Header";
 import About from "./components/About";
 import Skills from "./components/Skills";
-import Portfolio from "./components/Portfolio";
 import Projects from "./components/Projects";
 import Footer from "./components/Footer";
 import { Helmet } from "react-helmet";
@@ -27,7 +26,6 @@ export default function App() {
         <Header />
         <About />
         <Skills />
-        <Portfolio />
         <Projects />
         <Footer />
       </ThemeProvider>
