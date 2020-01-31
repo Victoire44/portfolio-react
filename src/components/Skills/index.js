@@ -12,23 +12,21 @@ import node from "./assets/node.png";
 import mysql from "./assets/mysql.png";
 import mongo from "./assets/mongodb.png";
 
-const useStyles = makeStyles({
+const useStyles = makeStyles(theme => ({
     root: {
-        height: "100vh",
+        minHeight: `calc(100vh - ${theme.spacing(35)}px)`,
         width: "100%",
+        padding: theme.spacing(20, 0, 15, 0),
         backgroundSize: "cover",
         backgroundAttachment: "fixed",
         backgroundRepeat: "no-repeat",
         background: "#fafafa",
-        display: "flex",
-        flexDirection: "column",
-        justifyContent: "center",
         "& .MuiGrid-item":{
             display: "flex",
             flexDirection: "column",
             justifyContent: "center",
             alignItems: "center",
-            padding: "50px"
+            padding: theme.spacing(10)
         }
     },
     logos: {
@@ -37,7 +35,7 @@ const useStyles = makeStyles({
     title: {
         fontWeight:"bold"
     }
-});
+}));
 
 
 export default function Skills() {

@@ -16,17 +16,17 @@ import campmom from "../Projects/assets/campmom.png";
 
 
 
-const useStyles = makeStyles({
+const useStyles = makeStyles(theme => ({
     root: {
-        padding: "100px 0"
+        minHeight: `calc(100vh - ${theme.spacing(35)}px)`,
+        padding: theme.spacing(20, 0, 15, 0)
     },
-
     card: {
         display: "flex",
         flexWrap: "wrap",
         justifyContent: "space-between",
     }
-});
+}));
 
 
 export default function Projects() {
@@ -44,7 +44,7 @@ export default function Projects() {
                         image={memory}
                         title="Animals Memory Game"
                         alt="Animals Memory Game"
-                        text="Command line app with band in town, Spotify, OMDB APIs."
+                        text="Click on an image to earn points, but don't click on any more than once!"
                         github="https://github.com/Victoire44/clicky-game"
                         heroku="https://victoire44.github.io/clicky-game"
                     />
@@ -131,11 +131,11 @@ export default function Projects() {
                         image={liri}
                         title="Liri"
                         alt="Liri"
-                        text="Click on an image to earn points, but don't click on any more than once!"
+                        text="Command line app with band in town, Spotify, OMDB APIs."
                         github="https://github.com/Victoire44/liri-node-app"
                     />
                 </Box>
-            </Container >
-        </div >
+            </Container>
+        </div>
     )
 }

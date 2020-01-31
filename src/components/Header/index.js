@@ -2,7 +2,7 @@ import React from "react";
 import { makeStyles, Typography, AppBar, Toolbar } from "@material-ui/core";
 import { Parallax } from "react-parallax";
 import Container from "@material-ui/core/Container";
-import Contact from "../Contact";
+import SocialNetwork from "../SocialNetwork";
 import { Link, animateScroll as scroll } from "react-scroll";
 
 const useStyles = makeStyles(theme => ({
@@ -98,21 +98,30 @@ export default function Header() {
                                 className={`${classes.menuItem} ${classes.hover}`}
                                 underline="none">
                                 PROJECTS</Link>
+                                <Link
+                                to="contact"
+                                smooth={true}
+                                spy={true}
+                                duration={600}
+                                variant="h6"
+                                className={`${classes.menuItem} ${classes.hover}`}
+                                underline="none">
+                                CONTACT</Link>
                         </Typography>
-                        <Contact />
+                        <SocialNetwork />
                     </Toolbar>
                 </Container>
             </AppBar>
 
             <Parallax
                 className={classes.parallax}
-                bgImage={require('./assets/test.jpg')}
+                bgImage={require('./assets/parallax.jpeg')}
                 bgImageAlt="background"
-                strength={250}
+                strength={300}
             >
-                <Typography variant="h2" className={classes.name} data-aos="fade-right" data-aos-duration="1500">Victoire Baron</Typography>
-                <Typography className={classes.title} variant="h4" data-aos="fade-left" data-aos-duration="1500"> Web Developer</Typography>
+                <Typography variant="h1" className={classes.name} data-aos="fade-right" data-aos-duration="1500">Victoire Baron</Typography>
+                <Typography className={classes.title} variant="h3" data-aos="fade-left" data-aos-duration="1500"> Web Developer</Typography>
             </Parallax>
         </div>
-    )
+    );
 }

@@ -1,39 +1,56 @@
 import React from "react";
-import { makeStyles, IconButton, Link } from "@material-ui/core";
-import LinkedInIcon from '@material-ui/icons/LinkedIn';
-import EmailIcon from "@material-ui/icons/Email";
-import GitHubIcon from "@material-ui/icons/GitHub";
+import { makeStyles, Container, AppBar, Toolbar, Typography, Box, Divider, Grid } from "@material-ui/core";
+import SocialNetwork from "../SocialNetwork";
 
-const useStyles = makeStyles(theme => ({
-    padding: {
-        padding: theme.spacing(1)
+const useStyles = makeStyles({
+    root: {
+        background: "#19232f",
+        height: "500px",
+        paddingTop: "50px",
+        "& .MuiDivider-root": {
+            background: "white"
+        }
     },
-    icons: {
-        fill: "white",
+    footer: {
+        background: "#252834",
+        color: "white",
+        display: "flex",
+        justifyContent: "center",
     },
-}));
+});
 
-
-export default function Icons(props) {
-    const classes = useStyles(props);
+export default function Contact() {
+    const classes = useStyles();
 
     return (
-        <div>
-            <Link href="https://github.com/Victoire44" target="_blank">
-                <IconButton className={classes.padding}>
-                    <GitHubIcon className={classes.icons} fontSize="large" aria-label="github" />
-                </IconButton>
-            </Link>
-            <Link href="https://www.linkedin.com/in/victoirebaron/?locale=en_US" target="_blank">
-                <IconButton className={classes.padding}>
-                    <LinkedInIcon className={classes.icons} fontSize="large" aria-label="linkedin" />
-                </IconButton>
-            </Link>
-            <Link href="mailto:victoirebaron@hotmail.fr" target="_blank" >
-                <IconButton className={classes.padding}>
-                    <EmailIcon className={classes.icons} fontSize="large" aria-label="email" />
-                </IconButton>
-            </Link>
+        <div id="contact">
+            <AppBar position="static" className={classes.root}>
+                <Container style={{ width: "1100px" }}>
+                    <Grid container >
+                        <Grid item md={12}>
+                            <Box mb={15}>
+                                <Typography variant="h3" data-aos="fade-right" data-aos-duration="1000">Contact</Typography>
+                                <Divider />
+                            </Box>
+                        </Grid>
+                        <Grid item md={4}>
+                            <Typography variant="h5" >Phone Number</Typography>
+                            <Typography>+1(415)416-0428</Typography>
+                        </Grid>
+                        <Grid item md={4} textAlign="center">
+                            <Typography variant="h5">Email</Typography>
+                            <Typography>victoirebaron@hotmail.fr</Typography>
+                        </Grid>
+                        <Grid item md={4}>
+                            <Typography variant="h5">Social Network </Typography>
+                            <SocialNetwork />
+                        </Grid>
+                    </Grid>
+                </Container>
+            </AppBar>
+            <Toolbar className={classes.footer} >
+                <Typography>©2020 Victoire Baron</Typography>
+            </Toolbar>
         </div>
     )
 }
