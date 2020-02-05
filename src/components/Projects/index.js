@@ -44,6 +44,7 @@ export default function Projects() {
                         image={memory}
                         title="Animals Memory Game"
                         alt="Animals Memory Game"
+                        tools="React.js"
                         text="Click on an image to earn points, but don't click on any more than once!"
                         github="https://github.com/Victoire44/clicky-game"
                         heroku="https://victoire44.github.io/clicky-game"
@@ -53,6 +54,7 @@ export default function Projects() {
                         title="CampDad"
                         alt="CampDad"
                         text="Campsite search application"
+                        tools="jQuery"
                         github="https://github.com/Victoire44/project1"
                         heroku="https://victoire44.github.io/project1/"
                     />
@@ -61,6 +63,7 @@ export default function Projects() {
                         title="CampMom"
                         alt="CampMom"
                         text="Campsite search application in React"
+                        tools="React.js"
                         github="https://github.com/Victoire44/CampMom"
                         heroku="https://campmom.herokuapp.com/"
                     />
@@ -69,6 +72,7 @@ export default function Projects() {
                         title="Purr-fect Match"
                         alt="Purr-fect Match"
                         text="Pet adoption service"
+                        tools="MERN stack"
                         github="https://github.com/Victoire44/Purr-fect-Match"
                         heroku="https://purr-fect-match-vb.herokuapp.com/main"
                     />
@@ -77,6 +81,7 @@ export default function Projects() {
                         title="Netflix Gif"
                         alt="Netflix Gif"
                         text="App that displays many gifs on Netflix series that are pulled from the Giphy API using Ajax calls."
+                        tools="jQuery"
                         github="https://github.com/Victoire44/GifTastic"
                         heroku="https://victoire44.github.io/GifTastic/"
                     />
@@ -84,7 +89,8 @@ export default function Projects() {
                         image={googlebook}
                         title="Google Books Search"
                         alt="Google Books Search"
-                        text="Full Stack app to display books based on user searches. Use of Express and MongoDB so that users can save books to review or purchase later"
+                        tools="MERN stack"
+                        text="Full Stack app to display books based on user searches. Use of Express.js and MongoDB so that users can save books to review or purchase later."
                         github="https://github.com/Victoire44/Google-Books-Search"
                         heroku="https://google-books-search-vb.herokuapp.com/"
                     />
@@ -92,14 +98,16 @@ export default function Projects() {
                         image={trainscheduler}
                         title="Train Scheduler"
                         alt="Train Scheduler"
+                        tools="jQuery, Firebase"
                         text="Built a train schedule app that incorporates Firebase to host arrival and departure data."
                         github="https://github.com/Victoire44/Train-Scheduler"
-                        heroku="https://github.com/Victoire44/Train-Scheduler"
+                        heroku="https://victoire44.github.io/Train-Scheduler/"
                     />
                     <Card
                         image={wordguess}
                         title="Word Guess Game"
                         alt="Word Guess Game"
+                        tools="JavaScript"
                         text="Word Guessing game created in javaScript where users can guess missing letters of a given word."
                         github="https://github.com/Victoire44/Word-Guess-Game"
                         heroku="https://victoire44.github.io/Word-Guess-Game"
@@ -108,6 +116,7 @@ export default function Projects() {
                         image={icecream}
                         title="Ice Cream Game"
                         alt="Ice Cream Game"
+                        tools="JavaScript"
                         text="Guessing game built with jQuery. You win the game by matching your total score to random number."
                         github="https://github.com/Victoire44/unit-4-game"
                         heroku="https://victoire44.github.io/unit-4-game"
@@ -116,6 +125,7 @@ export default function Projects() {
                         image={burger}
                         title="Eat-Da-Burger"
                         alt="Eat-Da-Burger"
+                        tools="jQuery, Node.js, MySQL"
                         text="Eat-Da-Burger is a restaurant app that lets users input the names of burgers they'd like to eat."
                         github="https://github.com/Victoire44/burger"
                         heroku="https://burger-vb.herokuapp.com"
@@ -124,14 +134,16 @@ export default function Projects() {
                         image={bamazon}
                         title="Bamazon"
                         alt="Bamazon"
-                        text="Command line app "
+                        text="Command line app"
+                        tools="Node.js, MySQL"
                         github="https://github.com/Victoire44/Bamazon"
                     />
                     <Card
                         image={liri}
                         title="Liri"
                         alt="Liri"
-                        text="Command line app with band in town, Spotify, OMDB APIs."
+                        tools="Node.js"
+                        text="Command line app with band in town, Spotify, OMDB APIs"
                         github="https://github.com/Victoire44/liri-node-app"
                     />
                 </Box>

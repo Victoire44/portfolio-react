@@ -5,7 +5,7 @@ import GitHubIcon from "@material-ui/icons/GitHub";
 const radius = 1
 const useStyles = makeStyles(theme => ({
     paper: {
-        height: 200,
+        height: 230,
         position: "relative",
         marginBottom: theme.spacing(8),
         borderRadius: theme.spacing(radius)
@@ -16,7 +16,10 @@ const useStyles = makeStyles(theme => ({
     },
     content: {
         color: "#fff",
-        background: "#252834",
+        display: "flex",
+        alignItems: "center",
+        justifyContent: "center",
+        background: "#19232f",
         position: "absolute",
         top: 0,
         left: 0,
@@ -26,14 +29,24 @@ const useStyles = makeStyles(theme => ({
         opacity: 0,
         transition: "all 300ms ease-out",
         "&:hover": {
-            opacity: 0.98
+            opacity: 0.95
         }
     },
     icons: {
-        color:"#fff"
+        color: "#fff",
+        "&:hover": {
+            color: "black",
+        }
     },
     info: {
-        padding: theme.spacing(2),
+        padding: theme.spacing(2, 5),
+
+    },
+    title: {
+        color: "#FA0063",
+    },
+    description: {
+        lineHeight: 1.8
     }
 }));
 
@@ -49,15 +62,16 @@ export default function MediaCard(props) {
             />
             <Link href={props.heroku} color="inherit" underline="none" target="_blank" rel="noopener" className={classes.content} align="center">
                 <div className={classes.info}>
-                  <Typography gutterBottom variant="h5" component="h2">
-                    {props.title}
-                </Typography>
-                <Typography variant="body2" component="p">
-                    {props.text}
-                </Typography>
-                <Link href={props.github} target="_blank" rel="noopener">
-                    <IconButton><GitHubIcon className={classes.icons} fontSize="large" aria-label="github" /></IconButton>
-                </Link>
+                    <Typography gutterBottom variant="h6" className={classes.title}>
+                        {props.title}
+                    </Typography>
+                    <Typography>{props.tools}</Typography>
+                    <Typography variant="body2" component="p" className={classes.description}>
+                        {props.text}
+                    </Typography>
+                    <Link href={props.github} target="_blank" rel="noopener">
+                        <IconButton><GitHubIcon className={classes.icons} fontSize="large" aria-label="github" /></IconButton>
+                    </Link>
                 </div>
             </Link>
         </Paper>

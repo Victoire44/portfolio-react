@@ -37,7 +37,7 @@ export default function Contact() {
                             <Typography variant="h5" >Phone Number</Typography>
                             <Typography>+1(415)416-0428</Typography>
                         </Grid>
-                        <Grid item md={4} textAlign="center">
+                        <Grid item md={4}>
                             <Typography variant="h5">Email</Typography>
                             <Typography>victoirebaron@hotmail.fr</Typography>
                         </Grid>
@@ -51,6 +51,6 @@ export default function Contact() {
             <Toolbar className={classes.footer} >
                 <Typography>©2020 Victoire Baron</Typography>
             </Toolbar>
-        </div>
+        </div >
     )
 }

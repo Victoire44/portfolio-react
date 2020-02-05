@@ -1,7 +1,6 @@
 import React from "react";
-import { makeStyles, Typography, AppBar, Toolbar } from "@material-ui/core";
+import { Container, makeStyles, Typography, AppBar, Toolbar } from "@material-ui/core";
 import { Parallax } from "react-parallax";
-import Container from "@material-ui/core/Container";
 import SocialNetwork from "../SocialNetwork";
 import { Link, animateScroll as scroll } from "react-scroll";
 
@@ -14,11 +13,17 @@ const useStyles = makeStyles(theme => ({
     },
     menuItem: {
         marginLeft: theme.spacing(5),
-    },
-    hover: {
-        '&:hover': {
+        "&:hover": {
             color: "#FA0063",
-            cursor: "pointer"
+            cursor: "pointer",
+        }
+    },
+    logo: {
+        height: theme.spacing(9),
+        fill: "#fff",
+        "&:hover": {
+            fill: "#FA0063",
+            cursor: "pointer",
         }
     },
     name: {
@@ -42,7 +47,7 @@ const useStyles = makeStyles(theme => ({
         backgroundSize: "cover",
         backgroundAttachment: "fixed",
         backgroundRepeat: "no-repeat",
-    }
+    },
 }))
 
 
@@ -55,18 +60,18 @@ export default function Header() {
             <AppBar className={classes.appbar}>
                 <Container>
                     <Toolbar>
+                        <Link
+                            to="header"
+                            smooth={true}
+                            spy={true}
+                            duration={600}
+                        >
+                            <svg viewBox="0 0 100 100" className={classes.logo}>
+                                <text x="10" y="77" font-family="Arial" font-size="73">V</text>
+                                <text x="46" y="77" font-family="Arial" font-size="73">B</text>
+                            </svg>
+                        </Link>
                         <Typography className={classes.menu}>
-                            <Link
-                                to="header"
-                                smooth={true}
-                                spy={true}
-                                duration={600}
-                                variant="h6"
-                                underline="none"
-                                className={classes.hover}
-                            >
-                                VB
-                            </Link>
                             <Link
                                 to="about"
                                 smooth={true}
@@ -74,7 +79,7 @@ export default function Header() {
                                 duration={600}
                                 variant="h6"
                                 underline="none"
-                                className={`${classes.menuItem} ${classes.hover}`}
+                                className={classes.menuItem}
                             >
                                 ABOUT
                             </Link>
@@ -85,7 +90,7 @@ export default function Header() {
                                 duration={600}
                                 variant="h6"
                                 underline="none"
-                                className={`${classes.menuItem} ${classes.hover}`}
+                                className={classes.menuItem}
                             >
                                 SKILLS
                             </Link>
@@ -95,16 +100,16 @@ export default function Header() {
                                 spy={true}
                                 duration={600}
                                 variant="h6"
-                                className={`${classes.menuItem} ${classes.hover}`}
+                                className={classes.menuItem}
                                 underline="none">
                                 PROJECTS</Link>
-                                <Link
+                            <Link
                                 to="contact"
                                 smooth={true}
                                 spy={true}
                                 duration={600}
                                 variant="h6"
-                                className={`${classes.menuItem} ${classes.hover}`}
+                                className={classes.menuItem}
                                 underline="none">
                                 CONTACT</Link>
                         </Typography>

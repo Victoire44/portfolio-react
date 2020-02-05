@@ -1,6 +1,6 @@
 import React from "react";
 import { makeStyles, CardHeader, Container, Typography, Paper, Box, Divider, Grid, Link } from "@material-ui/core/";
-import html from "./assets/html.svg";
+import html from "./assets/html.png";
 import css from "./assets/css.png";
 import bootstrap from "./assets/bootstrap.png";
 import materialize from "./assets/materialize.png";
@@ -71,6 +71,18 @@ export default function Skills() {
                             <Typography className={classes.title}>CSS</Typography>
                         </Grid>
                         <Grid item xs={3}>
+                            <Link href="https://www.javascript.com" target="-blank">
+                                <img src={javascript} alt="Javascript" className={classes.logos} />
+                            </Link>
+                            <Typography className={classes.title}>JavaScript</Typography>
+                        </Grid>
+                        <Grid item xs={3}>
+                            <Link href="https://reactjs.org" target="-blank">
+                                <img src={react} alt="React.js" className={classes.logos} />
+                            </Link>
+                            <Typography className={classes.title}>React.js</Typography>
+                        </Grid>
+                        <Grid item xs={3}>
                             <Link href="https://getbootstrap.com" target="-blank">
                                 <img src={bootstrap} alt="Bootstrap" className={classes.logos} />
                             </Link>
@@ -87,18 +99,6 @@ export default function Skills() {
                                 <img src={material} alt="Material UI" className={classes.logos} />
                             </Link>
                             <Typography className={classes.title}>Material UI</Typography>
-                        </Grid>
-                        <Grid item xs={3}>
-                            <Link href="https://www.javascript.com" target="-blank">
-                                <img src={javascript} alt="Javascript" className={classes.logos} />
-                            </Link>
-                            <Typography className={classes.title}>JavaScript</Typography>
-                        </Grid>
-                        <Grid item xs={3}>
-                            <Link href="https://reactjs.org" target="-blank">
-                                <img src={react} alt="React.js" className={classes.logos} />
-                            </Link>
-                            <Typography className={classes.title}>React.js</Typography>
                         </Grid>
                         <Grid item xs={3}>
                             <Link href="https://jquery.com" target="-blank">
