@@ -29,8 +29,11 @@ const useStyles = makeStyles(theme => ({
         opacity: 0,
         transition: "all 300ms ease-out",
         "&:hover": {
-            opacity: 0.95
-        }
+            opacity: 0.95,
+           "& .makeStyles-media-246": {
+                filter: "grayscale(50%)"
+            }
+           }
     },
     icons: {
         color: "#fff",

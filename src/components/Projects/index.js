@@ -1,5 +1,5 @@
 import React from "react";
-import { Container, Typography, Box, makeStyles, Divider } from "@material-ui/core/";
+import { Container, Typography, Box, makeStyles, Divider, Button } from "@material-ui/core/";
 import Card from "../Card";
 import memory from "../Projects/assets/memorygame.png";
 import bamazon from "../Projects/assets/bamazon.png";
@@ -14,12 +14,13 @@ import purrfectmatch from "../Projects/assets/purr-fect-match.png";
 import campdad from "../Projects/assets/campdad.png";
 import campmom from "../Projects/assets/campmom.png";
 
-
-
 const useStyles = makeStyles(theme => ({
     root: {
         minHeight: `calc(100vh - ${theme.spacing(35)}px)`,
-        padding: theme.spacing(20, 0, 15, 0)
+        padding: theme.spacing(20, 0, 15, 0),
+        "& Button:nth-child(n+2)": {
+            marginLeft: theme.spacing(5)
+        },
     },
     card: {
         display: "flex",
@@ -28,9 +29,15 @@ const useStyles = makeStyles(theme => ({
     }
 }));
 
+function arrayEquals(array1, array2) {
+    return array1.length === array2.length && array1.every(value => array2.includes(value))
+}
 
 export default function Projects() {
-    const classes = useStyles();
+    const classes = useStyles()
+
+    const all = ['projects', 'team']
+    const [categoriesToShow, setCategoriesToShow] = React.useState(all)
 
     return (
         <div id="projects" className={classes.root}>
@@ -39,8 +46,13 @@ export default function Projects() {
                     <Typography variant="h3" data-aos="fade-right" data-aos-duration="1000" classeName={classes.title}>Projects</Typography>
                     <Divider />
                 </Box>
+                <Box mb={10} >
+                    <Button onClick={() => setCategoriesToShow(all)} disabled={arrayEquals(categoriesToShow, all)}>Show all</Button>
+                    <Button onClick={() => setCategoriesToShow(["projects"])} disabled={arrayEquals(categoriesToShow, ["projects"])}>Projects</Button>
+                    <Button onClick={() => setCategoriesToShow(["team"])} disabled={arrayEquals(categoriesToShow, ["team"])}>Team projects</Button>
+                </Box >
                 <Box className={classes.card}>
-                    <Card
+                    {(categoriesToShow.includes("projects") ? <Card
                         image={memory}
                         title="Animals Memory Game"
                         alt="Animals Memory Game"
@@ -48,8 +60,8 @@ export default function Projects() {
                         text="Click on an image to earn points, but don't click on any more than once!"
                         github="https://github.com/Victoire44/clicky-game"
                         heroku="https://victoire44.github.io/clicky-game"
-                    />
-                    <Card
+                    /> : null)}
+                    {(categoriesToShow.includes("team") ? <Card
                         image={campdad}
                         title="CampDad"
                         alt="CampDad"
@@ -57,8 +69,8 @@ export default function Projects() {
                         tools="jQuery"
                         github="https://github.com/Victoire44/project1"
                         heroku="https://victoire44.github.io/project1/"
-                    />
-                    <Card
+                    /> : null)}
+                    {(categoriesToShow.includes("team") ? <Card
                         image={campmom}
                         title="CampMom"
                         alt="CampMom"
@@ -66,8 +78,8 @@ export default function Projects() {
                         tools="React.js"
                         github="https://github.com/Victoire44/CampMom"
                         heroku="https://campmom.herokuapp.com/"
-                    />
-                    <Card
+                    /> : null)}
+                    {(categoriesToShow.includes("team") ? <Card
                         image={purrfectmatch}
                         title="Purr-fect Match"
                         alt="Purr-fect Match"
@@ -75,8 +87,8 @@ export default function Projects() {
                         tools="MERN stack"
                         github="https://github.com/Victoire44/Purr-fect-Match"
                         heroku="https://purr-fect-match-vb.herokuapp.com/main"
-                    />
-                    <Card
+                    /> : null)}
+                    {(categoriesToShow.includes("projects") ? <Card
                         image={netflix}
                         title="Netflix Gif"
                         alt="Netflix Gif"
@@ -84,8 +96,8 @@ export default function Projects() {
                         tools="jQuery"
                         github="https://github.com/Victoire44/GifTastic"
                         heroku="https://victoire44.github.io/GifTastic/"
-                    />
-                    <Card
+                    /> : null)}
+                    {(categoriesToShow.includes("projects") ? <Card
                         image={googlebook}
                         title="Google Books Search"
                         alt="Google Books Search"
@@ -93,8 +105,8 @@ export default function Projects() {
                         text="Full Stack app to display books based on user searches. Use of Express.js and MongoDB so that users can save books to review or purchase later."
                         github="https://github.com/Victoire44/Google-Books-Search"
                         heroku="https://google-books-search-vb.herokuapp.com/"
-                    />
-                    <Card
+                    /> : null)}
+                    {(categoriesToShow.includes("projects") ? <Card
                         image={trainscheduler}
                         title="Train Scheduler"
                         alt="Train Scheduler"
@@ -102,8 +114,8 @@ export default function Projects() {
                         text="Built a train schedule app that incorporates Firebase to host arrival and departure data."
                         github="https://github.com/Victoire44/Train-Scheduler"
                         heroku="https://victoire44.github.io/Train-Scheduler/"
-                    />
-                    <Card
+                    /> : null)}
+                    {(categoriesToShow.includes("projects") ? <Card
                         image={wordguess}
                         title="Word Guess Game"
                         alt="Word Guess Game"
@@ -111,8 +123,8 @@ export default function Projects() {
                         text="Word Guessing game created in javaScript where users can guess missing letters of a given word."
                         github="https://github.com/Victoire44/Word-Guess-Game"
                         heroku="https://victoire44.github.io/Word-Guess-Game"
-                    />
-                    <Card
+                    /> : null)}
+                    {(categoriesToShow.includes("projects") ? <Card
                         image={icecream}
                         title="Ice Cream Game"
                         alt="Ice Cream Game"
@@ -120,8 +132,8 @@ export default function Projects() {
                         text="Guessing game built with jQuery. You win the game by matching your total score to random number."
                         github="https://github.com/Victoire44/unit-4-game"
                         heroku="https://victoire44.github.io/unit-4-game"
-                    />
-                    <Card
+                    /> : null)}
+                    {(categoriesToShow.includes("projects") ? <Card
                         image={burger}
                         title="Eat-Da-Burger"
                         alt="Eat-Da-Burger"
@@ -129,23 +141,23 @@ export default function Projects() {
                         text="Eat-Da-Burger is a restaurant app that lets users input the names of burgers they'd like to eat."
                         github="https://github.com/Victoire44/burger"
                         heroku="https://burger-vb.herokuapp.com"
-                    />
-                    <Card
+                    /> : null)}
+                    {(categoriesToShow.includes("projects") ? <Card
                         image={bamazon}
                         title="Bamazon"
                         alt="Bamazon"
                         text="Command line app"
                         tools="Node.js, MySQL"
                         github="https://github.com/Victoire44/Bamazon"
-                    />
-                    <Card
+                    /> : null)}
+                    {(categoriesToShow.includes("projects") ? <Card
                         image={liri}
                         title="Liri"
                         alt="Liri"
                         tools="Node.js"
                         text="Command line app with band in town, Spotify, OMDB APIs"
                         github="https://github.com/Victoire44/liri-node-app"
-                    />
+                    /> : null)}
                 </Box>
             </Container>
         </div>
