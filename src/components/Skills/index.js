@@ -59,7 +59,7 @@ export default function Skills() {
                     />
                     <Grid container>
                         <Grid item xs={3}>
-                        <Link href="https://www.w3.org/Style/CSS/Overview.en.html" target="-blank">
+                            <Link href="https://www.w3.org/Style/CSS/Overview.en.html" target="-blank">
                                 <img src={html} alt="HTML" className={classes.logos} />
                             </Link>
                             <Typography className={classes.title}>HTML</Typography>

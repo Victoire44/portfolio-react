@@ -2,11 +2,11 @@ import React from "react";
 import { makeStyles, Container, AppBar, Toolbar, Typography, Box, Divider, Grid } from "@material-ui/core";
 import SocialNetwork from "../SocialNetwork";
 
-const useStyles = makeStyles({
+const useStyles = makeStyles(theme => ({
     root: {
         background: "#19232f",
-        height: "500px",
-        paddingTop: "50px",
+        height: theme.spacing(90),
+        paddingTop: theme.spacing(10),
         "& .MuiDivider-root": {
             background: "white"
         }
@@ -17,7 +17,7 @@ const useStyles = makeStyles({
         display: "flex",
         justifyContent: "center",
     },
-});
+}));
 
 export default function Contact() {
     const classes = useStyles();
@@ -26,31 +26,29 @@ export default function Contact() {
         <div id="contact">
             <AppBar position="static" className={classes.root}>
                 <Container style={{ width: "1100px" }}>
-                    <Grid container >
-                        <Grid item md={12}>
-                            <Box mb={15}>
-                                <Typography variant="h3" data-aos="fade-right" data-aos-duration="1000">Contact</Typography>
-                                <Divider />
-                            </Box>
-                        </Grid>
-                        <Grid item md={4}>
-                            <Typography variant="h5" >Phone Number</Typography>
+                    <Box mb={15}>
+                        <Typography variant="h3" data-aos="fade-right" data-aos-duration="1000">Contact</Typography>
+                        <Divider />
+                    </Box>
+                    <Box display="flex" justifyContent="space-between">
+                        <Box flexDirection="column" justifyContent="center">
+                            <Typography lineHeight={8} variant="h5" >Phone Number</Typography>
                             <Typography>+1(415)416-0428</Typography>
-                        </Grid>
-                        <Grid item md={4}>
+                        </Box>
+                        <Box flexDirection="column">
                             <Typography variant="h5">Email</Typography>
                             <Typography>victoirebaron@hotmail.fr</Typography>
-                        </Grid>
-                        <Grid item md={4}>
+                        </Box>
+                        <Box flexDirection="column">
                             <Typography variant="h5">Social Network </Typography>
                             <SocialNetwork />
-                        </Grid>
-                    </Grid>
+                        </Box>
+                    </Box>
                 </Container>
             </AppBar>
             <Toolbar className={classes.footer} >
                 <Typography>©2020 Victoire Baron</Typography>
             </Toolbar>
-        </div >
+        </div>
     )
 }

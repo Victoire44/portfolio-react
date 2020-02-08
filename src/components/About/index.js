@@ -1,8 +1,6 @@
 import React from "react";
 import { makeStyles, Typography, Box, Container, Divider, Grid } from "@material-ui/core";
 import portrait from "./assets/portrait.jpg";
-import { Timeline, Event } from "react-timeline-scribble";
-import { Fragment } from "react";
 
 const useStyles = makeStyles(theme => ({
     root: {
@@ -12,17 +10,49 @@ const useStyles = makeStyles(theme => ({
         backgroundSize: "cover",
         backgroundAttachment: "fixed",
         backgroundRepeat: "no-repeat",
-        "& .MuiGrid-grid-md-8":{
-            paddingRight: "50px"
+        "& .MuiGrid-grid-md-8": {
+            paddingRight: theme.spacing(10)
         },
     },
     portrait: {
-        height: 250,
+        height: theme.spacing(50),
         borderRadius: "50%",
         float: "left",
         shapeOutside: "circle(50%)",
         marginRight: theme.spacing(6)
     },
+    timeline: {
+        borderLeft: "2px solid grey",
+        padding: theme.spacing(1.4, 10)
+    },
+    timelineItem: {
+        lineHeight: 2,
+        position: "relative",
+        "&:nth-child(-n+2)": {
+            paddingBottom: theme.spacing(8),
+        }
+    },
+    date: {
+        paddingBottom: theme.spacing(3),
+        "&:first-child": {
+            fontWeight: "bold",
+            position: "relative",
+            fontSize: theme.spacing(2.7),
+            paddingTop: 0,
+        },
+        "&:before": {
+            content: "''",
+            display: "block",
+            width: theme.spacing(2),
+            height: theme.spacing(2),
+            borderRadius: "50%",
+            position: "absolute",
+            top: theme.spacing(0.4),
+            left: theme.spacing(-11.6),
+            background: "white",
+            border: "2px solid grey"
+        },
+    }
 }))
 
 export default function About() {
@@ -38,41 +68,54 @@ export default function About() {
                             <Divider />
                         </Box>
                     </Grid>
-                    <Grid item md={8}>
+                    <Grid item md={8} >
                         <img
                             src={portrait}
                             className={classes.portrait}
                             alt="portrait"
                         />
                         <Typography paragraph align="justify">
-                            I'm an ambitious Web Developer living in San Francisco.
-                            Certified Full-Stack Web Developer at UC Berkeley, I am equipped with the skills needed to create effective application from creation to execution.
-                            My goal is to develop powerful products with fast user interface and optimized performance while getting an attractive UI/UX interfaces.
-                             </Typography>
-                        <Typography paragraph align="justify">
-                            My background in Art History makes me think creatively with an artistic outlook. I think of
-                                the interface like a painting where I seek to create harmony and a good balance between the
-                                color and components. I really enjoy to work with React.js and material UI to get a clean and modern design.
-                            </Typography>
+                            <Box lineHeight={2}>
+                                I'm an ambitious Web Developer living in San Francisco.
+                                Certified Full-Stack Web Developer at UC Berkeley, I am equipped with the skills needed to create effective application from creation to execution.
+                                My goal is to develop powerful products with fast user interface and optimized performance while getting an attractive UI/UX interfaces.
+                             </Box>
+                            <Box lineHeight={2}>
+                                My background in Art History makes me think creatively with an artistic outlook. I think of
+                                    the interface like a painting where I seek to create harmony and a good balance between the
+                                    color and components. I really enjoy to work with React.js and material UI to get a clean and modern design.
+                                </Box>
+                        </Typography>
                     </Grid>
                     <Grid item md={4}>
-                        <Fragment>
-                            <Timeline>
-                                <Event interval={"May 2019 - August 2019"} title={"UC Berkeley Extension"} subtitle={"Full Stack Web Development Coding"}>
-                                    San Francisco, California
-                                </Event>
-                                <Event interval={"2011 – 2013"} title={"La Sorbonne"} subtitle={"Art History Master"}>
-                                    Paris, France
-                                </Event>
-                                <Event interval={"2008 – 2011"} title={"Nantes University"} subtitle={"Art History Licence"}>
-                                    Nantes, France
-                                </Event>
-                            </Timeline>
-                        </Fragment>
+                        <div className={classes.timeline}>
+                            <div className={classes.timelineItem}>
+                                <Typography className={classes.date} > May 2019 - August 2019 </Typography>
+                                <Typography variant="h6"> UC Berkley Extension </Typography>
+                                <Typography variant="p"> Full Stack Web Development Coding</Typography>
+                                <Typography variant="body2"> San Francisco, California </Typography>
+
+                            </div>
+                            <div className={classes.timelineItem}>
+                                <Typography className={classes.date}> 2011 – 2013 </Typography>
+                                <Typography variant="h6"> Paris-Sorbonne University</Typography>
+                                <Typography variant="p">Art History Master</Typography>
+                                <Typography variant="body2"> Paris, France</Typography>
+
+                            </div>
+                            <div className={classes.timelineItem}>
+                                <Typography className={classes.date}> 2008 – 2011 </Typography>
+                                <Typography variant="h6"> Nantes University </Typography>
+                                <Typography variant="hp"> Art History Licence</Typography>
+                                <Typography variant="body2"> Nantes, France </Typography>
+
+                            </div>
+                        </div>
+
                     </Grid>
                 </Grid>
             </Container>
-        </div>
+        </div >
     )
 }
 
