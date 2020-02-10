@@ -41,7 +41,7 @@ export default function Projects() {
 
     return (
         <div id="projects" className={classes.root}>
-            <Container style={{ width: "1100px" }}>
+            <Container maxWidth="md">
                 <Box mb={10}>
                     <Typography variant="h3" data-aos="fade-right" data-aos-duration="1000" classeName={classes.title}>Projects</Typography>
                     <Divider />

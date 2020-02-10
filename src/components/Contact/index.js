@@ -1,5 +1,5 @@
 import React from "react";
-import { makeStyles, Container, AppBar, Toolbar, Typography, Box, Divider, Grid } from "@material-ui/core";
+import { makeStyles, Container, AppBar, Toolbar, Typography, Box, Divider } from "@material-ui/core";
 import SocialNetwork from "../SocialNetwork";
 
 const useStyles = makeStyles(theme => ({
@@ -17,6 +17,11 @@ const useStyles = makeStyles(theme => ({
         display: "flex",
         justifyContent: "center",
     },
+    contact: {
+        [theme.breakpoints.down('sm')]: {
+            flexDirection: "column"
+        },
+    }
 }));
 
 export default function Contact() {
@@ -25,12 +30,12 @@ export default function Contact() {
     return (
         <div id="contact">
             <AppBar position="static" className={classes.root}>
-                <Container style={{ width: "1100px" }}>
+                <Container maxWidth="md">
                     <Box mb={15}>
                         <Typography variant="h3" data-aos="fade-right" data-aos-duration="1000">Contact</Typography>
                         <Divider />
                     </Box>
-                    <Box display="flex" justifyContent="space-between">
+                    <Box display="flex" justifyContent="space-between" className={classes.contact}>
                         <Box flexDirection="column" justifyContent="center">
                             <Typography lineHeight={8} variant="h5" >Phone Number</Typography>
                             <Typography>+1(415)416-0428</Typography>

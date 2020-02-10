@@ -47,7 +47,7 @@ export default function Skills() {
 
     return (
         <div id="skills" className={classes.root}>
-            <Container style={{ width: "1100px" }}>
+            <Container maxWidth="md">
                 <Box mb={10}>
                     <Typography variant="h3" data-aos="fade-right" data-aos-duration="1000">Skills</Typography>
                     <Divider />

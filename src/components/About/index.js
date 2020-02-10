@@ -11,7 +11,10 @@ const useStyles = makeStyles(theme => ({
         backgroundAttachment: "fixed",
         backgroundRepeat: "no-repeat",
         "& .MuiGrid-grid-md-8": {
-            paddingRight: theme.spacing(10)
+            paddingRight: theme.spacing(10),
+            [theme.breakpoints.down('sm')]: {
+                paddingRight: theme.spacing(0),
+              },
         },
     },
     portrait: {
@@ -60,7 +63,7 @@ export default function About() {
 
     return (
         <div id="about" className={classes.root}>
-            <Container style={{ width: "1100px" }}>
+            <Container maxWidth="md">
                 <Grid container>
                     <Grid item md={12}>
                         <Box mb={10}>
@@ -83,10 +86,10 @@ export default function About() {
                             <Box lineHeight={2}>
                                 My background in Art History makes me think creatively with an artistic outlook. I think of
                                     the interface like a painting where I seek to create harmony and a good balance between the
-                                    color and components. I really enjoy to work with React.js and material UI to get a clean and modern design.
+                                    color and components. My specialities are React.js and material UI to get a clean and modern design.
                                 </Box>
                         </Typography>
-                    </Grid>
+                    </Grid> 
                     <Grid item md={4}>
                         <div className={classes.timeline}>
                             <div className={classes.timelineItem}>

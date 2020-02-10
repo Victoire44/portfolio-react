@@ -5,8 +5,17 @@ import SocialNetwork from "../SocialNetwork";
 import { Link, animateScroll as scroll } from "react-scroll";
 
 const useStyles = makeStyles(theme => ({
+
     appbar: {
-        background: "#252834",
+        background: "#252834"
+    },
+    root: {
+        "& .MuiToolbar": {
+            [theme.breakpoints.down('xs')]: {
+                display: "flex",
+                flexDirection: "column"
+            }
+        }
     },
     menu: {
         flexGrow: 1,
@@ -15,7 +24,7 @@ const useStyles = makeStyles(theme => ({
         marginLeft: theme.spacing(5),
         "&:hover": {
             color: "#FA0063",
-            cursor: "pointer",
+            cursor: "pointer"
         }
     },
     logo: {
@@ -23,7 +32,7 @@ const useStyles = makeStyles(theme => ({
         fill: "#fff",
         "&:hover": {
             fill: "#FA0063",
-            cursor: "pointer",
+            cursor: "pointer"
         }
     },
     name: {
@@ -38,7 +47,7 @@ const useStyles = makeStyles(theme => ({
         display: "flex",
         flexDirection: "column",
         justifyContent: "center",
-        textAlign: "center",
+        textAlign: "center"
     },
     header: {
         background: "#252834",
@@ -46,7 +55,7 @@ const useStyles = makeStyles(theme => ({
         width: "100%",
         backgroundSize: "cover",
         backgroundAttachment: "fixed",
-        backgroundRepeat: "no-repeat",
+        backgroundRepeat: "no-repeat"
     },
 }))
 
@@ -58,8 +67,8 @@ export default function Header() {
     return (
         <div id="header">
             <AppBar className={classes.appbar}>
-                <Container>
-                    <Toolbar>
+                <Container maxWidth="md">
+                    <Toolbar className={classes.toolbar}>
                         <Link
                             to="header"
                             smooth={true}
@@ -119,13 +128,14 @@ export default function Header() {
             </AppBar>
 
             <Parallax
-                className={classes.parallax}
                 bgImage={require('./assets/parallax.jpeg')}
                 bgImageAlt="background"
                 strength={300}
             >
-                <Typography variant="h1" className={classes.name} data-aos="fade-right" data-aos-duration="1500">Victoire Baron</Typography>
-                <Typography className={classes.title} variant="h3" data-aos="fade-left" data-aos-duration="1500"> Web Developer</Typography>
+                <div className={classes.parallax}>
+                    <Typography variant="h1" className={classes.name} data-aos="fade-right" data-aos-duration="1500">Victoire Baron</Typography>
+                    <Typography className={classes.title} variant="h3" data-aos="fade-left" data-aos-duration="1500"> Web Developer</Typography>
+                </div>
             </Parallax>
         </div>
     );

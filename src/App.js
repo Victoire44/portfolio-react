@@ -12,14 +12,19 @@ import FaviconPng from "./assets/favicon.png";
 
 const theme = createMuiTheme({
   spacing: 5,
+  breakpoints: {
+    values: {
+      md: 1100,
+    }
+  }
 });
 
 export default function App() {
   return (
     <div>
       <Helmet>
-        <link rel="icon" type="image/svg+xml" href={FaviconSvg}/>
-        <link rel="icon" type="image/png" href={FaviconPng}/>
+        <link rel="icon" type="image/svg+xml" href={FaviconSvg} />
+        <link rel="icon" type="image/png" href={FaviconPng} />
         <title>Victoire Baron</title>
       </Helmet>
       <ThemeProvider theme={theme}>
