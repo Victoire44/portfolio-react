@@ -14,11 +14,11 @@ const useStyles = makeStyles(theme => ({
 }));
 
 
-export default function Icons(props) {
+export default function SocialNetwork(props) {
     const classes = useStyles(props);
 
     return (
-        <div>
+        <div className={props.className}>
             <Link href="https://github.com/Victoire44" target="_blank" >
                 <IconButton className={classes.iconButton}>
                     <GitHubIcon className={classes.icons} fontSize="large" aria-label="github" />

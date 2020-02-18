@@ -1,6 +1,5 @@
 import React from 'react';
 import { makeStyles, IconButton, Link, Typography, Paper } from "@material-ui/core";
-import GitHubIcon from "@material-ui/icons/GitHub";
 
 const radius = 1
 const useStyles = makeStyles(theme => ({
@@ -35,12 +34,6 @@ const useStyles = makeStyles(theme => ({
             }
            }
     },
-    icons: {
-        color: "#fff",
-        "&:hover": {
-            color: "black",
-        }
-    },
     info: {
         padding: theme.spacing(2, 5),
 
@@ -73,7 +66,7 @@ export default function MediaCard(props) {
                         {props.text}
                     </Typography>
                     <Link href={props.github} target="_blank" rel="noopener">
-                        <IconButton><GitHubIcon className={classes.icons} fontSize="large" aria-label="github" /></IconButton>
+                        <IconButton>{props.icon}</IconButton>
                     </Link>
                 </div>
             </Link>

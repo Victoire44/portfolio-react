@@ -12,9 +12,9 @@ const useStyles = makeStyles(theme => ({
         backgroundRepeat: "no-repeat",
         "& .MuiGrid-grid-md-8": {
             paddingRight: theme.spacing(10),
-            [theme.breakpoints.down('sm')]: {
+            [theme.breakpoints.down(1100)]: {
                 paddingRight: theme.spacing(0),
-              },
+            },
         },
     },
     portrait: {
@@ -22,11 +22,20 @@ const useStyles = makeStyles(theme => ({
         borderRadius: "50%",
         float: "left",
         shapeOutside: "circle(50%)",
-        marginRight: theme.spacing(6)
+        marginRight: theme.spacing(6),
+        [theme.breakpoints.down('sm')]: {
+            paddingRight: theme.spacing(0),
+        },
+        [theme.breakpoints.down(670)]: {
+            height: theme.spacing(30),
+        },
     },
     timeline: {
         borderLeft: "2px solid grey",
-        padding: theme.spacing(1.4, 10)
+        padding: theme.spacing(1.4, 10),
+        [theme.breakpoints.down(1100)]: {
+            display: "none"
+        }
     },
     timelineItem: {
         lineHeight: 2,
@@ -65,19 +74,19 @@ export default function About() {
         <div id="about" className={classes.root}>
             <Container maxWidth="md">
                 <Grid container>
-                    <Grid item md={12}>
-                        <Box mb={10}>
-                            <Typography variant="h3" data-aos="fade-right" data-aos-duration="1000"> Hello, I'm Victoire</Typography>
-                            <Divider />
-                        </Box>
-                    </Grid>
+
+                    <Box mb={10}>
+                        <Typography variant="h3" data-aos="fade-right" data-aos-duration="1000"> Hello, I'm Victoire</Typography>
+                        <Divider />
+                    </Box>
+
                     <Grid item md={8} >
                         <img
                             src={portrait}
                             className={classes.portrait}
                             alt="portrait"
                         />
-                        <Typography paragraph align="justify">
+                        <Typography paragraph align="justify" className={classes.description}>
                             <Box lineHeight={2}>
                                 I'm an ambitious Web Developer living in San Francisco.
                                 Certified Full-Stack Web Developer at UC Berkeley, I am equipped with the skills needed to create effective application from creation to execution.
@@ -89,7 +98,7 @@ export default function About() {
                                     color and components. My specialities are React.js and material UI to get a clean and modern design.
                                 </Box>
                         </Typography>
-                    </Grid> 
+                    </Grid>
                     <Grid item md={4}>
                         <div className={classes.timeline}>
                             <div className={classes.timelineItem}>

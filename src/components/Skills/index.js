@@ -28,6 +28,10 @@ const useStyles = makeStyles(theme => ({
             alignItems: "center",
             padding: theme.spacing(10)
         },
+        "& .MuiGrid-root": {
+            display: "flex",
+            justifyContent: "center",
+        }
     },
     logos: {
         height: 60,
@@ -38,8 +42,9 @@ const useStyles = makeStyles(theme => ({
     },
     title: {
         fontWeight: "bold"
-    }
+    },
 }));
+
 
 
 export default function Skills() {

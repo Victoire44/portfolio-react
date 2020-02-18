@@ -9,14 +9,6 @@ const useStyles = makeStyles(theme => ({
     appbar: {
         background: "#252834"
     },
-    root: {
-        "& .MuiToolbar": {
-            [theme.breakpoints.down('xs')]: {
-                display: "flex",
-                flexDirection: "column"
-            }
-        }
-    },
     menu: {
         flexGrow: 1,
     },
@@ -57,12 +49,28 @@ const useStyles = makeStyles(theme => ({
         backgroundAttachment: "fixed",
         backgroundRepeat: "no-repeat"
     },
+    "@global": {
+        ".MuiToolbar-root": {
+            [theme.breakpoints.down(680)]: {
+                display: "flex",
+                flexDirection: "column",
+                padding: theme.spacing(2)
+            }
+        }
+    },
+    networks: {
+        // background: "red"
+        [theme.breakpoints.down(680)]: {
+            display: "none"
+        }
+    }
 }))
 
 
 export default function Header() {
     const props = { color: 'white' };
     const classes = useStyles(props);
+
 
     return (
         <div id="header">
@@ -122,7 +130,7 @@ export default function Header() {
                                 underline="none">
                                 CONTACT</Link>
                         </Typography>
-                        <SocialNetwork />
+                        <SocialNetwork className={classes.networks} />
                     </Toolbar>
                 </Container>
             </AppBar>
