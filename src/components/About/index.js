@@ -73,13 +73,11 @@ export default function About() {
     return (
         <div id="about" className={classes.root}>
             <Container maxWidth="md">
+                <Box mb={10}>
+                    <Typography variant="h3" data-aos="fade-right" data-aos-duration="1000"> Hello, I'm Victoire</Typography>
+                    <Divider />
+                </Box>
                 <Grid container>
-
-                    <Box mb={10}>
-                        <Typography variant="h3" data-aos="fade-right" data-aos-duration="1000"> Hello, I'm Victoire</Typography>
-                        <Divider />
-                    </Box>
-
                     <Grid item md={8} >
                         <img
                             src={portrait}
@@ -118,7 +116,7 @@ export default function About() {
                             <div className={classes.timelineItem}>
                                 <Typography className={classes.date}> 2008 – 2011 </Typography>
                                 <Typography variant="h6"> Nantes University </Typography>
-                                <Typography variant="hp"> Art History Licence</Typography>
+                                <Typography variant="hp"> Art History Bachelor</Typography>
                                 <Typography variant="body2"> Nantes, France </Typography>
 
                             </div>
