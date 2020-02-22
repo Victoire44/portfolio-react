@@ -84,8 +84,8 @@ export default function Header() {
                             duration={600}
                         >
                             <svg viewBox="0 0 100 100" className={classes.logo}>
-                                <text x="10" y="77" font-family="Arial" font-size="73">V</text>
-                                <text x="46" y="77" font-family="Arial" font-size="73">B</text>
+                                <text x="10" y="77" fontFamily="Arial" fontSize="73">V</text>
+                                <text x="46" y="77" fontFamily="Arial" fontSize="73">B</text>
                             </svg>
                         </Link>
                         <Typography className={classes.menu}>

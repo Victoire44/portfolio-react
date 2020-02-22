@@ -1,14 +1,20 @@
 import React from 'react';
 import { makeStyles, IconButton, Link, Typography, Paper } from "@material-ui/core";
+import GitHubIcon from "@material-ui/icons/GitHub";
+import LockIcon from '@material-ui/icons/Lock';
+
 
 const radius = 1
 const useStyles = makeStyles(theme => ({
-    paper: {
+    paper: props => ({
         height: 230,
         position: "relative",
         marginBottom: theme.spacing(8),
-        borderRadius: theme.spacing(radius)
-    },
+        borderRadius: theme.spacing(radius),
+        "&:hover": {
+            cursor: props.locked ? "not-allowed" : "pointer"
+        }
+    }),
     media: {
         height: "100%",
         borderRadius: theme.spacing(radius)
@@ -29,10 +35,10 @@ const useStyles = makeStyles(theme => ({
         transition: "all 300ms ease-out",
         "&:hover": {
             opacity: 0.95,
-           "& .makeStyles-media-246": {
+            "& .makeStyles-media-246": {
                 filter: "grayscale(50%)"
             }
-           }
+        }
     },
     info: {
         padding: theme.spacing(2, 5),
@@ -43,11 +49,18 @@ const useStyles = makeStyles(theme => ({
     },
     description: {
         lineHeight: 1.8
-    }
+    },
+    icons: props => ({
+        color: "#fff",
+        "&:hover": {
+            cursor: props.locked ? "not-allowed" : "pointer",
+            color: "black",
+        }
+    })
 }));
 
 export default function MediaCard(props) {
-    const classes = useStyles();
+    const classes = useStyles(props);
 
     return (
         <Paper className={classes.paper} elevation={8}>
@@ -66,7 +79,10 @@ export default function MediaCard(props) {
                         {props.text}
                     </Typography>
                     <Link href={props.github} target="_blank" rel="noopener">
-                        <IconButton>{props.icon}</IconButton>
+                        <IconButton>{(props.locked ?
+                            <LockIcon className={classes.icons} style={{ color: "white" }} fontSize="large" aria-label="github" /> :
+                            <GitHubIcon className={classes.icons} fontSize="large" aria-label="github" />)}
+                        </IconButton>
                     </Link>
                 </div>
             </Link>
