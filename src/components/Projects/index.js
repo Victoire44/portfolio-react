@@ -103,14 +103,14 @@ export default function Projects() {
                         heroku="https://victoire44.github.io/clicky-game"
                         locked={false}
                     /> : null)}
-                    {(categoriesToShow.includes("projects") ? <Card
+                    {/* {(categoriesToShow.includes("projects") ? <Card
                         image={laminar}
                         title="Laminar"
                         alt="Netflix"
                         text="Netflix internal tool for Data Scientists and Streaming Engineers to explore client playback logs"
                         tools="React.js, Material.UI"
                         locked={true}
-                    /> : null)}
+                    /> : null)} */}
                     {(categoriesToShow.includes("projects") ? <Card
                         image={trainscheduler}
                         title="Train Scheduler"
