@@ -86,7 +86,7 @@ export default function About() {
                         />
                         <Typography paragraph align="justify" className={classes.description}>
                             <Box lineHeight={2}>
-                                I'm an ambitious Web Developer living in San Francisco.
+                                I'm a Web Developer living in San Francisco.
                                 Certified Full-Stack Web Developer at UC Berkeley, I am equipped with the skills needed to create effective application from creation to execution.
                                 My goal is to develop powerful products with fast user interface and optimized performance while getting an attractive UI/UX interfaces.
                              </Box>

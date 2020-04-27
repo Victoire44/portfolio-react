@@ -11,6 +11,7 @@ import jquery from "./assets/jquery.png";
 import node from "./assets/node.png";
 import mysql from "./assets/mysql.png";
 import mongo from "./assets/mongodb.png";
+import framer from "./assets/framer.png";
 
 const useStyles = makeStyles(theme => ({
     root: {
@@ -88,6 +89,18 @@ export default function Skills() {
                             <Typography className={classes.title}>React.js</Typography>
                         </Grid>
                         <Grid item xs={3}>
+                            <Link href="https://www.framer.com" target="-blank">
+                                <img src={framer} alt="Framer" className={classes.logos} />
+                            </Link>
+                            <Typography className={classes.title}>Framer</Typography>
+                        </Grid>
+                        <Grid item xs={3}>
+                            <Link href="https://material-ui.com" target="-blank">
+                                <img src={material} alt="Material UI" className={classes.logos} />
+                            </Link>
+                            <Typography className={classes.title}>Material UI</Typography>
+                        </Grid>
+                        <Grid item xs={3}>
                             <Link href="https://getbootstrap.com" target="-blank">
                                 <img src={bootstrap} alt="Bootstrap" className={classes.logos} />
                             </Link>
@@ -98,12 +111,6 @@ export default function Skills() {
                                 <img src={materialize} alt="Materialize" className={classes.logos} />
                             </Link>
                             <Typography className={classes.title}>Materialize</Typography>
-                        </Grid>
-                        <Grid item xs={3}>
-                            <Link href="https://material-ui.com" target="-blank">
-                                <img src={material} alt="Material UI" className={classes.logos} />
-                            </Link>
-                            <Typography className={classes.title}>Material UI</Typography>
                         </Grid>
                         <Grid item xs={3}>
                             <Link href="https://jquery.com" target="-blank">
