@@ -1,6 +1,5 @@
 import React from "react";
-import { makeStyles, Container, AppBar, Toolbar, Typography, Box, Divider } from "@material-ui/core";
-import SocialNetwork from "../SocialNetwork";
+import { makeStyles, Container, AppBar, Toolbar, Typography, Box, Divider, Link } from "@material-ui/core";
 
 const useStyles = makeStyles(theme => ({
     root: {
@@ -9,6 +8,10 @@ const useStyles = makeStyles(theme => ({
         paddingTop: theme.spacing(10),
         "& .MuiDivider-root": {
             background: "white"
+        },
+        "& .MuiLink-root": {
+            textDecoration: "none",
+            color: "white"
         }
     },
     footer: {
@@ -39,20 +42,17 @@ export default function Contact() {
                         <Divider />
                     </Box>
                     <Box className={classes.contact}>
-                        <div>
-                            <Typography variant="h5" >Phone Number</Typography>
-                            <Typography>+1(415)416-0428</Typography>
-                        </div>
-                        <div >
-                            <Typography variant="h5">Email</Typography>
-                            <Typography>victoirebaron@hotmail.fr</Typography>
-                        </div>
+                        <Typography variant="h5">Victoire Baron</Typography>
+                        <Typography variant="h6">+1(415)416-0428</Typography>
+                        <Link href="mailto:victoirebaron@hotmail.fr" target="_blank">
+                            <Typography variant="h6">victoirebaron@hotmail.fr</Typography>
+                        </Link>
                     </Box>
                 </Container>
             </AppBar>
             <Toolbar className={classes.footer} >
                 <Typography>©2020 Victoire Baron</Typography>
             </Toolbar>
-        </div>
+        </div >
     )
 }

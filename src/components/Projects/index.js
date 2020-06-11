@@ -13,8 +13,8 @@ import laminar from "../Projects/assets/laminar.png";
 import netflix from "../Projects/assets/netflix.png";
 import purrfectmatch from "../Projects/assets/purr-fect-match.png";
 import campdad from "../Projects/assets/campdad.png";
+import remibesse from "../Projects/assets/remi-besse.png";
 import firminGirard from "../Projects/assets/firmin-girard.png";
-import blogClem from "../Projects/assets/blog-clem.png";
 
 const useStyles = makeStyles(theme => ({
     root: {
@@ -65,23 +65,25 @@ export default function Projects() {
                     <Button onClick={() => setCategoriesToShow(["team"])} disabled={arrayEquals(categoriesToShow, ["team"])}>Team projects</Button>
                 </Box>
                 <Box className={classes.card}>
+                {(categoriesToShow.includes("projects") ? <Card
+                        image={remibesse}
+                        title="Remi Besse"
+                        alt="Remi Besse"
+                        text="Remi Besse is a French artist, moviemaker and photographer "
+                        tools="React.js, Material.UI & Framer"
+                        github="https://github.com/Victoire44/rbportfolio"
+                        heroku="https://remibesse.com"
+                        locked={false}
+                    /> : null)}
                     {(categoriesToShow.includes("projects") ? <Card
                         image={firminGirard}
                         title="Firmin-Girard"
                         alt="Firmin-Girard"
                         text="French painter Firmin-Girard website"
-                        tools="React.js,Material.UI"
+                        tools="React.js & Material.UI"
                         github="https://github.com/Victoire44/Firmin-Girard"
                         heroku="https://victoire44.github.io/firmin-girard"
                         locked={false}
-                    /> : null)}
-                    {(categoriesToShow.includes("projects") ? <Card
-                        image={blogClem}
-                        title="Clémence B."
-                        alt="Blog Clem"
-                        tools="React.js, Material.UI"
-                        text="A writer who shares her newsletters (coming soon)"
-                        locked={true}
                     /> : null)}
                     {(categoriesToShow.includes("team") ? <Card
                         image={campdad}
@@ -103,19 +105,19 @@ export default function Projects() {
                         heroku="https://victoire44.github.io/clicky-game"
                         locked={false}
                     /> : null)}
-                    {/* {(categoriesToShow.includes("projects") ? <Card
+                    {(categoriesToShow.includes("projects") ? <Card
                         image={laminar}
                         title="Laminar"
                         alt="Netflix"
                         text="Netflix internal tool for Data Scientists and Streaming Engineers to explore client playback logs"
-                        tools="React.js, Material.UI"
+                        tools="React.js & Material.UI"
                         locked={true}
-                    /> : null)} */}
+                    /> : null)}
                     {(categoriesToShow.includes("projects") ? <Card
                         image={trainscheduler}
                         title="Train Scheduler"
                         alt="Train Scheduler"
-                        tools="jQuery, Firebase"
+                        tools="jQuery & Firebase"
                         text="Built a train schedule app that incorporates Firebase to host arrival and departure data."
                         github="https://github.com/Victoire44/Train-Scheduler"
                         heroku="https://victoire44.github.io/Train-Scheduler/"
@@ -175,7 +177,7 @@ export default function Projects() {
                         image={burger}
                         title="Eat-Da-Burger"
                         alt="Eat-Da-Burger"
-                        tools="jQuery, Node.js, MySQL"
+                        tools="jQuery, Node.js & MySQL"
                         text="Eat-Da-Burger is a restaurant app that lets users input the names of burgers they'd like to eat."
                         github="https://github.com/Victoire44/burger"
                         heroku="https://burger-vb.herokuapp.com"
@@ -186,7 +188,7 @@ export default function Projects() {
                         title="Bamazon"
                         alt="Bamazon"
                         text="Command line app"
-                        tools="Node.js, MySQL"
+                        tools="Node.js & MySQL"
                         github="https://github.com/Victoire44/Bamazon"
                         locked={false}
                     /> : null)}
