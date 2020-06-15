@@ -43,7 +43,7 @@ export default function Contact() {
                     </Box>
                     <Box className={classes.contact}>
                         <Typography variant="h5">Victoire Baron</Typography>
-                        <Typography variant="h6">+1(415)416-0428</Typography>
+                        <Typography variant="h6">+1 415-416-0428</Typography>
                         <Link href="mailto:victoirebaron@hotmail.fr" target="_blank">
                             <Typography variant="h6">victoirebaron@hotmail.fr</Typography>
                         </Link>

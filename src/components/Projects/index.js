@@ -123,7 +123,7 @@ export default function Projects() {
                         heroku="https://victoire44.github.io/Train-Scheduler/"
                         locked={false}
                     /> : null)}
-                    {(categoriesToShow.includes("projects") ? <Card
+                    {/* {(categoriesToShow.includes("projects") ? <Card
                         image={netflix}
                         title="Netflix Gif"
                         alt="Netflix Gif"
@@ -132,7 +132,7 @@ export default function Projects() {
                         github="https://github.com/Victoire44/GifTastic"
                         heroku="https://victoire44.github.io/GifTastic/"
                         locked={false}
-                    /> : null)}
+                    /> : null)} */}
                     {(categoriesToShow.includes("projects") ? <Card
                         image={googlebook}
                         title="Google Books Search"
@@ -183,7 +183,7 @@ export default function Projects() {
                         heroku="https://burger-vb.herokuapp.com"
                         locked={false}
                     /> : null)}
-                    {(categoriesToShow.includes("projects") ? <Card
+                    {/* {(categoriesToShow.includes("projects") ? <Card
                         image={bamazon}
                         title="Bamazon"
                         alt="Bamazon"
@@ -200,7 +200,7 @@ export default function Projects() {
                         text="Command line app with band in town, Spotify, OMDB APIs"
                         github="https://github.com/Victoire44/liri-node-app"
                         locked={false}
-                    /> : null)}
+                    /> : null)} */}
                 </Box>
             </Container>
         </div>
