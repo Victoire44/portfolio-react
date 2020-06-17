@@ -12,6 +12,7 @@ import node from "./assets/node.png";
 import mysql from "./assets/mysql.png";
 import mongo from "./assets/mongodb.png";
 import framer from "./assets/framer.png";
+import Title from "../Title";
 
 const useStyles = makeStyles(theme => ({
     root: {
@@ -21,7 +22,7 @@ const useStyles = makeStyles(theme => ({
         backgroundSize: "cover",
         backgroundAttachment: "fixed",
         backgroundRepeat: "no-repeat",
-        background: "#fafafa",
+        background: "#f5f5f5",
         "& .MuiGrid-item": {
             display: "flex",
             flexDirection: "column",
@@ -54,15 +55,10 @@ export default function Skills() {
     return (
         <div id="skills" className={classes.root}>
             <Container maxWidth="md">
-                <Box mb={10}>
-                    <Typography variant="h3" data-aos="fade-right" data-aos-duration="1000">Skills</Typography>
-                    <Divider />
-                </Box>
+                <Title>
+                    <Typography>Skills</Typography>
+                </Title>
                 <Paper elevation={1} className={classes.paper} >
-                    <CardHeader
-                        align="center"
-                        title="Front End Web Developer"
-                    />
                     <Grid container>
                         <Grid item xs={3}>
                             <Link href="https://www.w3.org/Style/CSS/Overview.en.html" target="-blank">

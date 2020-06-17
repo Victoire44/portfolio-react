@@ -1,83 +1,124 @@
-import React from "react";
-import { Container, makeStyles, Typography, AppBar, Toolbar } from "@material-ui/core";
-import { Parallax } from "react-parallax";
+import React, { useState, useEffect, useRef } from "react";
+import { Container, makeStyles, Typography, Toolbar } from "@material-ui/core";
 import SocialNetwork from "../SocialNetwork";
 import { Link, animateScroll as scroll } from "react-scroll";
+import { motion } from "framer-motion";
+import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
+import { Frame } from "framer"
 
 const useStyles = makeStyles(theme => ({
-
-    appbar: {
-        background: "#252834"
-    },
-    menu: {
-        flexGrow: 1,
+    toolbar: {
+        paddingRight: 0,
+        paddingLeft: 0,
+        width: "100vw",
+        display: "flex",
+        justifyContent: "center"
     },
     menuItem: {
-        marginLeft: theme.spacing(5),
+        marginLeft: theme.spacing(3),
+        marginRight: theme.spacing(3),
+        fontFamily: "'Poiret One', cursive",
+        fontSize: "20px",
+        textTransform: "uppercase",
+        fontWeight: 600,
         "&:hover": {
-            color: "#FA0063",
+            color: "#bdbdbd",
             cursor: "pointer"
         }
     },
     logo: {
         height: theme.spacing(9),
-        fill: "#fff",
+        fill: "#000",
         "&:hover": {
-            fill: "#FA0063",
+            fill: "#bdbdbd",
             cursor: "pointer"
         }
     },
-    name: {
-        color: props => props.color,
-        fontWeight: 400,
-    },
-    title: {
-        color: "#FA0063",
-    },
-    parallax: {
+    description: {
         height: "100vh",
         display: "flex",
         flexDirection: "column",
         justifyContent: "center",
-        textAlign: "center"
+        "& .MuiTypography-root": {
+            fontFamily: "'Poiret One', cursive",
+            fontSize: theme.spacing(10),
+            fontWeight: 800
+        }
     },
-    header: {
-        background: "#252834",
-        height: "100vh",
+    navbar: props => ({
         width: "100%",
-        backgroundSize: "cover",
-        backgroundAttachment: "fixed",
-        backgroundRepeat: "no-repeat"
-    },
-    "@global": {
-        ".MuiToolbar-root": {
-            [theme.breakpoints.down(680)]: {
-                display: "flex",
-                flexDirection: "column",
-                padding: theme.spacing(2)
-            }
-        }
-    },
+        zIndex: 100,
+        position: props.isSticky ? "fixed" : "absolute",
+        bottom: props.isSticky ? "" : "15%",
+        top: props.isSticky ? 0 : "",
+        display: "block",
+        justifyContent: "center"
+    }),
     networks: {
-        // background: "red"
-        [theme.breakpoints.down(680)]: {
-            display: "none"
-        }
+        position: "absolute",
+        top: "55px",
+        right: "200px",
     }
 }))
 
 
 export default function Header() {
-    const props = { color: 'white' };
-    const classes = useStyles(props);
+    const [isSticky, setSticky] = useState(false);
+    const classes = useStyles({ isSticky: isSticky });
+    const menuRef = useRef(null)
 
+    const description = {
+        visible: { opacity: 1, y: -40 },
+        hidden: { opacity: 0, y: 0 }
+    }
+    const navbar = {
+        visible: { opacity: 1, y: 0 },
+        hidden: { opacity: 0, y: 200 }
+    }
+
+    const handleScroll = () => {
+        if (menuRef.current) {
+            setSticky(menuRef.current.getBoundingClientRect().top <= 0);
+        }
+    }
+
+    useEffect(() => {
+        window.addEventListener('scroll', handleScroll)
+        return () => {
+            window.removeEventListener('scroll', () => handleScroll)
+        }
+    }, [])
 
     return (
         <div id="header">
-            <AppBar className={classes.appbar}>
-                <Container maxWidth="md">
+            <Container maxWidth="md">
+                <SocialNetwork className={classes.networks} />
+            </Container>
+            <Container maxWidth="sm" >
+                <motion.div initial="hidden"
+                    animate="visible"
+                    transition={{ duration: 0.7 }}
+                    variants={description}
+                    className={classes.description}>
+                    <Typography>I'm Victoire Baron. </Typography>
+                    <Typography>Front End Developer based in San Francisco.</Typography>
+                    <Typography>Currently building user interface a photographer/moviemaker website.</Typography>
+                </motion.div>
+            </Container >
+            <div ref={menuRef} className={classes.navbar}>
+                <Frame
+                    initial="hidden"
+                    animate="visible"
+                    transition={{ duration: 0.7 }}
+                    variants={navbar}
+                    center={"x"}
+                    background={"#fff"}
+                    width={"auto"}
+                    height={60}
+                    // zIndex={100}
+                >
                     <Toolbar className={classes.toolbar}>
-                        <Link
+                        {/* <Link
                             to="header"
                             smooth={true}
                             spy={true}
@@ -87,8 +128,17 @@ export default function Header() {
                                 <text x="10" y="77" fontFamily="Arial" fontSize="73">V</text>
                                 <text x="46" y="77" fontFamily="Arial" fontSize="73">B</text>
                             </svg>
-                        </Link>
+                        </Link> */}
                         <Typography className={classes.menu}>
+                            <Link
+                                to="works"
+                                smooth={true}
+                                spy={true}
+                                duration={600}
+                                variant="h6"
+                                className={classes.menuItem}
+                                underline="none">
+                                Works</Link>
                             <Link
                                 to="about"
                                 smooth={true}
@@ -98,7 +148,7 @@ export default function Header() {
                                 underline="none"
                                 className={classes.menuItem}
                             >
-                                ABOUT
+                                About
                             </Link>
                             <Link
                                 to="skills"
@@ -109,17 +159,8 @@ export default function Header() {
                                 underline="none"
                                 className={classes.menuItem}
                             >
-                                SKILLS
+                                Skills
                             </Link>
-                            <Link
-                                to="projects"
-                                smooth={true}
-                                spy={true}
-                                duration={600}
-                                variant="h6"
-                                className={classes.menuItem}
-                                underline="none">
-                                PROJECTS</Link>
                             <Link
                                 to="contact"
                                 smooth={true}
@@ -128,23 +169,36 @@ export default function Header() {
                                 variant="h6"
                                 className={classes.menuItem}
                                 underline="none">
-                                CONTACT</Link>
+                                Contact</Link>
                         </Typography>
-                        <SocialNetwork className={classes.networks} />
                     </Toolbar>
-                </Container>
-            </AppBar>
+                </Frame>
+            </div>
+        </div >
+    );
+}
 
-            <Parallax
+
+{/* <Parallax
                 bgImage={require('./assets/parallax.jpeg')}
                 bgImageAlt="background"
                 strength={300}
-            >
-                <div className={classes.parallax}>
-                    <Typography variant="h1" className={classes.name} data-aos="fade-right" data-aos-duration="1500">Victoire Baron</Typography>
-                    <Typography className={classes.title} variant="h3" data-aos="fade-left" data-aos-duration="1500"> Web Developer</Typography>
-                </div>
-            </Parallax>
-        </div>
-    );
-}
+            > */}
+{/* </Parallax> */ }
+{/* <div style={{
+                position: "absolute",
+                left: "0%",
+                top: "auto",
+                right: "0%",
+                bottom: "2%",
+                height: "50%"
+            }}> */}
+{/* <Link
+                    to="works"
+                    smooth={true}
+                    spy={true}
+                    duration={1000}>
+                    <ExpandMoreIcon color="primary" style={{ position: "absolute", bottom: 0, right: "50%", fontSize: 40, height: "80px", color: "#000" }} />
+                </Link> */}
+{/* <AppBar className={classes.appbar}> */ }
+

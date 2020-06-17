@@ -1,9 +1,11 @@
 import React from "react";
 import { makeStyles, Container, AppBar, Toolbar, Typography, Box, Divider, Link } from "@material-ui/core";
+import Title from "../Title";
 
 const useStyles = makeStyles(theme => ({
     root: {
-        background: "#19232f",
+        background: "#000",
+        opacity: 0.95,
         height: theme.spacing(85),
         paddingTop: theme.spacing(10),
         "& .MuiDivider-root": {
@@ -15,8 +17,8 @@ const useStyles = makeStyles(theme => ({
         }
     },
     footer: {
-        background: "#252834",
-        color: "white",
+        background: "#fff",
+        color: "#000",
         display: "flex",
         justifyContent: "center",
     },
@@ -37,21 +39,36 @@ export default function Contact() {
         <div id="contact">
             <AppBar position="static" className={classes.root}>
                 <Container maxWidth="md">
-                    <Box mb={15}>
-                        <Typography variant="h3" data-aos="fade-right" data-aos-duration="1000">Contact</Typography>
-                        <Divider />
-                    </Box>
+                    <Title>
+                        <Typography>Contact</Typography>
+                    </Title>
                     <Box className={classes.contact}>
-                        <Typography variant="h5">Victoire Baron</Typography>
-                        <Typography variant="h6">+1 415-416-0428</Typography>
-                        <Link href="mailto:victoirebaron@hotmail.fr" target="_blank">
-                            <Typography variant="h6">victoirebaron@hotmail.fr</Typography>
+                        <Typography variant="h6">Tel: +1 415-416-0428</Typography>
+                        <Link href="mailto:me@victoirebaron.com" target="_blank">
+                            <Typography variant="h6">Email: me(at)victoirebaron.com</Typography>
                         </Link>
+                        <div style={{ display: "flex", justifyContent: "flex-end" }}>
+                            <Box ml={4}>
+                                <Link href="https://www.linkedin.com/in/victoirebaron/?locale=en_US" target="_blank">
+                                    <Typography variant="h6">LinkedIn</Typography>
+                                </Link>
+                            </Box>
+                            <Box ml={4}>
+                                <Link href="https://github.com/Victoire44" target="_blank">
+                                    <Typography variant="h6">Github</Typography>
+                                </Link>
+                            </Box>
+                            <Box ml={4}>
+                                <Link href="https://github.com/Victoire44" target="_blank">
+                                    <Typography variant="h6">Resume</Typography>
+                                </Link>
+                            </Box>
+                        </div>
                     </Box>
                 </Container>
             </AppBar>
             <Toolbar className={classes.footer} >
-                <Typography>©2020 Victoire Baron</Typography>
+                <Typography>© 2020 Victoire Baron</Typography>
             </Toolbar>
         </div >
     )

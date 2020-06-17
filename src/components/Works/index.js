@@ -1,23 +1,25 @@
 import React from "react";
 import { Container, Typography, Box, makeStyles, Divider, Button } from "@material-ui/core/";
 import Card from "../Card";
-import memory from "../Projects/assets/memorygame.png";
-import bamazon from "../Projects/assets/bamazon.png";
-import burger from "../Projects/assets/burger.png";
-import googlebook from "../Projects/assets/googlebook.png";
-import icecream from "../Projects/assets/ice-cream-collector.png";
-import liri from "../Projects/assets/liri.png";
-import trainscheduler from "../Projects/assets/train-scheduler.png";
-import wordguess from "../Projects/assets/word-guess-game.png";
-import laminar from "../Projects/assets/laminar.png";
-import netflix from "../Projects/assets/netflix.png";
-import purrfectmatch from "../Projects/assets/purr-fect-match.png";
-import campdad from "../Projects/assets/campdad.png";
-import remibesse from "../Projects/assets/remi-besse.png";
-import firminGirard from "../Projects/assets/firmin-girard.png";
+import memory from "../Works/assets/memorygame.png";
+import bamazon from "../Works/assets/bamazon.png";
+import burger from "../Works/assets/burger.png";
+import googlebook from "../Works/assets/googlebook.png";
+import icecream from "../Works/assets/ice-cream-collector.png";
+import liri from "../Works/assets/liri.png";
+import trainscheduler from "../Works/assets/train-scheduler.png";
+import wordguess from "../Works/assets/word-guess-game.png";
+import laminar from "../Works/assets/laminar.png";
+import netflix from "../Works/assets/netflix.png";
+import purrfectmatch from "../Works/assets/purr-fect-match.png";
+import campdad from "../Works/assets/campdad.png";
+import remibesse from "../Works/assets/remi-besse.png";
+import firminGirard from "../Works/assets/firmin-girard.png";
+import Title from "../Title";
 
 const useStyles = makeStyles(theme => ({
     root: {
+        background: "#f5f5f5",
         minHeight: `calc(100vh - ${theme.spacing(35)}px)`,
         padding: theme.spacing(20, 0, 15, 0),
         "& Button:nth-child(n+2)": {
@@ -46,26 +48,29 @@ function arrayEquals(array1, array2) {
     return array1.length === array2.length && array1.every(value => array2.includes(value))
 }
 
-export default function Projects() {
+export default function Works() {
     const classes = useStyles()
 
     const all = ['projects', 'team']
     const [categoriesToShow, setCategoriesToShow] = React.useState(all)
 
+    const title = {
+        visible: { opacity: 1, x: 0 },
+        hidden: { opacity: 0, x: -40 }
+    }
     return (
-        <div id="projects" className={classes.root}>
+        <div id="works" className={classes.root}>
             <Container maxWidth="md">
-                <Box mb={10}>
-                    <Typography variant="h3" data-aos="fade-right" data-aos-duration="1000" classeName={classes.title}>Projects</Typography>
-                    <Divider />
-                </Box>
-                <Box mb={10} >
+                <Title>
+                    <Typography>Works</Typography>
+                </Title>
+                <div mb={10} style={{ paddingBottom: "20px" }} >
                     <Button onClick={() => setCategoriesToShow(all)} disabled={arrayEquals(categoriesToShow, all)}>Show all</Button>
                     <Button onClick={() => setCategoriesToShow(["projects"])} disabled={arrayEquals(categoriesToShow, ["projects"])}>Projects</Button>
                     <Button onClick={() => setCategoriesToShow(["team"])} disabled={arrayEquals(categoriesToShow, ["team"])}>Team projects</Button>
-                </Box>
+                </div>
                 <Box className={classes.card}>
-                {(categoriesToShow.includes("projects") ? <Card
+                    {(categoriesToShow.includes("projects") ? <Card
                         image={remibesse}
                         title="Remi Besse"
                         alt="Remi Besse"
@@ -105,14 +110,14 @@ export default function Projects() {
                         heroku="https://victoire44.github.io/clicky-game"
                         locked={false}
                     /> : null)}
-                    {(categoriesToShow.includes("projects") ? <Card
+                    {/* {(categoriesToShow.includes("projects") ? <Card
                         image={laminar}
                         title="Laminar"
                         alt="Netflix"
                         text="Netflix internal tool for Data Scientists and Streaming Engineers to explore client playback logs"
                         tools="React.js & Material.UI"
                         locked={true}
-                    /> : null)}
+                    /> : null)} */}
                     {(categoriesToShow.includes("projects") ? <Card
                         image={trainscheduler}
                         title="Train Scheduler"
@@ -138,7 +143,7 @@ export default function Projects() {
                         title="Google Books Search"
                         alt="Google Books Search"
                         tools="MERN stack"
-                        text="Full Stack app to display books based on user searches. Use of Express.js and MongoDB so that users can save books to review or purchase later."
+                        text="Full Stack app to display books based on user searches. Use of Express.js and MongoDB to save books."
                         github="https://github.com/Victoire44/Google-Books-Search"
                         heroku="https://google-books-search-vb.herokuapp.com/"
                         locked={false}
@@ -173,7 +178,7 @@ export default function Projects() {
                         heroku="https://victoire44.github.io/unit-4-game"
                         locked={false}
                     /> : null)}
-                    {(categoriesToShow.includes("projects") ? <Card
+                    {/* {(categoriesToShow.includes("projects") ? <Card
                         image={burger}
                         title="Eat-Da-Burger"
                         alt="Eat-Da-Burger"
@@ -182,7 +187,7 @@ export default function Projects() {
                         github="https://github.com/Victoire44/burger"
                         heroku="https://burger-vb.herokuapp.com"
                         locked={false}
-                    /> : null)}
+                    /> : null)} */}
                     {/* {(categoriesToShow.includes("projects") ? <Card
                         image={bamazon}
                         title="Bamazon"
