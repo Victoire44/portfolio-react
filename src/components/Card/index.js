@@ -3,7 +3,7 @@ import { makeStyles, IconButton, Link, Typography, Paper } from "@material-ui/co
 import GitHubIcon from "@material-ui/icons/GitHub";
 import LockIcon from '@material-ui/icons/Lock';
 
-const radius = 1
+const radius = 0.5
 const useStyles = makeStyles(theme => ({
     paper: props => ({
         height: 230,
@@ -63,7 +63,7 @@ export default function MediaCard(props) {
     const classes = useStyles(props);
 
     return (
-        <Paper className={classes.paper} elevation={8}>
+        <Paper className={classes.paper} elevation={2}>
             <img
                 className={classes.media}
                 src={props.image}

@@ -22,7 +22,14 @@ const useStyles = makeStyles(theme => ({
         backgroundSize: "cover",
         backgroundAttachment: "fixed",
         backgroundRepeat: "no-repeat",
-        background: "#f5f5f5",
+        background: "#f2f2f2",
+        "@media (max-width: 600px)": {
+            padding: theme.spacing(14, 0, 5, 0),
+        },
+        "& .MuiTypography-root":{
+            fontFamily: "'Poiret One', cursive",
+            fontWeight: 800
+        },
         "& .MuiGrid-item": {
             display: "flex",
             flexDirection: "column",

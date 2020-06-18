@@ -1,30 +1,21 @@
 import React, { useState, useEffect, useRef } from "react";
-import { Container, makeStyles, Typography, Toolbar } from "@material-ui/core";
+import { Container, makeStyles, Typography } from "@material-ui/core";
 import SocialNetwork from "../SocialNetwork";
-import { Link, animateScroll as scroll } from "react-scroll";
 import { motion } from "framer-motion";
-import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
-import { Frame } from "framer"
+import NavBar from "../NavBar"
 
 const useStyles = makeStyles(theme => ({
+    root: {
+        height: "100vh",
+        position: "relative",
+        background: "#fafafa"
+    },
     toolbar: {
         paddingRight: 0,
         paddingLeft: 0,
         width: "100vw",
         display: "flex",
         justifyContent: "center"
-    },
-    menuItem: {
-        marginLeft: theme.spacing(3),
-        marginRight: theme.spacing(3),
-        fontFamily: "'Poiret One', cursive",
-        fontSize: "20px",
-        textTransform: "uppercase",
-        fontWeight: 600,
-        "&:hover": {
-            color: "#bdbdbd",
-            cursor: "pointer"
-        }
     },
     logo: {
         height: theme.spacing(9),
@@ -35,29 +26,47 @@ const useStyles = makeStyles(theme => ({
         }
     },
     description: {
-        height: "100vh",
         display: "flex",
+        height: "100%",
         flexDirection: "column",
         justifyContent: "center",
+        "@media (max-width: 600px)": {
+            padding: theme.spacing(0, 7)
+        },
         "& .MuiTypography-root": {
             fontFamily: "'Poiret One', cursive",
             fontSize: theme.spacing(10),
-            fontWeight: 800
+            fontWeight: 800,
+            "@media (max-width: 600px)": {
+                fontSize: theme.spacing(5)
+            }
         }
     },
     navbar: props => ({
         width: "100%",
         zIndex: 100,
-        position: props.isSticky ? "fixed" : "absolute",
-        bottom: props.isSticky ? "" : "15%",
+        position: props.isSticky ? "fixed" : "initial",
         top: props.isSticky ? 0 : "",
-        display: "block",
-        justifyContent: "center"
+        background: "#fafafa",
     }),
     networks: {
         position: "absolute",
-        top: "55px",
-        right: "200px",
+        right: 0,
+        left: 0,
+        display: "flex",
+        justifyContent: "flex-end",
+        padding: theme.spacing(14, 0, 0, 0),
+        "@media (max-width: 600px)": {
+            padding: theme.spacing(12, 7, 0, 7)
+        },
+    },
+    underline: {
+        width: "100%",
+        height: "1px",
+        borderRadius: "4px",
+        background: "black",
+        position: "absolute",
+        bottom: "-3px"
     }
 }))
 
@@ -68,12 +77,8 @@ export default function Header() {
     const menuRef = useRef(null)
 
     const description = {
-        visible: { opacity: 1, y: -40 },
-        hidden: { opacity: 0, y: 0 }
-    }
-    const navbar = {
         visible: { opacity: 1, y: 0 },
-        hidden: { opacity: 0, y: 200 }
+        hidden: { opacity: 0, y: 40 }
     }
 
     const handleScroll = () => {
@@ -90,11 +95,11 @@ export default function Header() {
     }, [])
 
     return (
-        <div id="header">
-            <Container maxWidth="md">
-                <SocialNetwork className={classes.networks} />
+        <div id="header" className={classes.root}>
+            <Container maxWidth="md" className={classes.networks}>
+                <SocialNetwork />
             </Container>
-            <Container maxWidth="sm" >
+            <Container maxWidth="sm" style={{ height: "100%", padding: 0 }}>
                 <motion.div initial="hidden"
                     animate="visible"
                     transition={{ duration: 0.7 }}
@@ -105,74 +110,8 @@ export default function Header() {
                     <Typography>Currently building user interface a photographer/moviemaker website.</Typography>
                 </motion.div>
             </Container >
-            <div ref={menuRef} className={classes.navbar}>
-                <Frame
-                    initial="hidden"
-                    animate="visible"
-                    transition={{ duration: 0.7 }}
-                    variants={navbar}
-                    center={"x"}
-                    background={"#fff"}
-                    width={"auto"}
-                    height={60}
-                    // zIndex={100}
-                >
-                    <Toolbar className={classes.toolbar}>
-                        {/* <Link
-                            to="header"
-                            smooth={true}
-                            spy={true}
-                            duration={600}
-                        >
-                            <svg viewBox="0 0 100 100" className={classes.logo}>
-                                <text x="10" y="77" fontFamily="Arial" fontSize="73">V</text>
-                                <text x="46" y="77" fontFamily="Arial" fontSize="73">B</text>
-                            </svg>
-                        </Link> */}
-                        <Typography className={classes.menu}>
-                            <Link
-                                to="works"
-                                smooth={true}
-                                spy={true}
-                                duration={600}
-                                variant="h6"
-                                className={classes.menuItem}
-                                underline="none">
-                                Works</Link>
-                            <Link
-                                to="about"
-                                smooth={true}
-                                spy={true}
-                                duration={600}
-                                variant="h6"
-                                underline="none"
-                                className={classes.menuItem}
-                            >
-                                About
-                            </Link>
-                            <Link
-                                to="skills"
-                                smooth={true}
-                                spy={true}
-                                duration={600}
-                                variant="h6"
-                                underline="none"
-                                className={classes.menuItem}
-                            >
-                                Skills
-                            </Link>
-                            <Link
-                                to="contact"
-                                smooth={true}
-                                spy={true}
-                                duration={600}
-                                variant="h6"
-                                className={classes.menuItem}
-                                underline="none">
-                                Contact</Link>
-                        </Typography>
-                    </Toolbar>
-                </Frame>
+            <div ref={menuRef} style={{ position: "absolute", bottom: "70px", height: "64px" }}>
+                <NavBar isSticky={isSticky} />
             </div>
         </div >
     );

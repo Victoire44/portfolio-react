@@ -19,9 +19,12 @@ import Title from "../Title";
 
 const useStyles = makeStyles(theme => ({
     root: {
-        background: "#f5f5f5",
+        background: "#f2f2f2",
         minHeight: `calc(100vh - ${theme.spacing(35)}px)`,
         padding: theme.spacing(20, 0, 15, 0),
+        "@media (max-width: 600px)": {
+            padding: theme.spacing(14, 0, 5, 0),
+        },
         "& Button:nth-child(n+2)": {
             marginLeft: theme.spacing(5)
         },
@@ -30,7 +33,6 @@ const useStyles = makeStyles(theme => ({
         display: "flex",
         flexWrap: "wrap",
         justifyContent: "space-around",
-
     },
     "@global": {
         ".MuiBox-root-281": {
@@ -41,7 +43,6 @@ const useStyles = makeStyles(theme => ({
         }
     },
 }));
-
 
 
 function arrayEquals(array1, array2) {

@@ -13,14 +13,24 @@ const useStyles = makeStyles(theme => ({
         minHeight: `calc(100vh - ${theme.spacing(35)}px)`,
         width: "100%",
         padding: theme.spacing(20, 0, 15, 0),
+        background: "#fafafa",
         backgroundSize: "cover",
         backgroundAttachment: "fixed",
         backgroundRepeat: "no-repeat",
+        "@media (max-width: 600px)": {
+            padding: theme.spacing(14, 0, 5, 0),
+        },
         "& .MuiGrid-grid-md-8": {
             paddingRight: theme.spacing(10),
             [theme.breakpoints.down(1100)]: {
                 paddingRight: theme.spacing(0),
             }
+        }
+    },
+    gridImages:{
+        position:"relative",
+        "@media (max-width: 600px)":{
+            display: "none"
         }
     }
 }))
@@ -28,11 +38,9 @@ const useStyles = makeStyles(theme => ({
 export default function About() {
     const classes = useStyles();
 
-    const { scrollYProgress } = useViewportScroll()
-    const x = useMotionValue(50)
-    const y = useTransform(x, value => value * 2, scrollYProgress);
-
-
+    const { scrollYProgress } = useViewportScroll();
+    const scale = useTransform(scrollYProgress, [0, 1], [0.2, 2]);
+  
     return (
         <div id="about" className={classes.root}>
             <Container maxWidth="md">
@@ -53,61 +61,66 @@ export default function About() {
                                 </Box>
                         </Typography>
                     </Grid>
-                    <Grid item md={6} style={{ position: "relative" }}>
+                    <Grid item md={6} className={classes.gridImages}>
                         <motion.img
                             src={portrait}
                             alt="Portrait"
                             style={{
-                                height: "230px",
+                                height: "180px",
                                 position: "absolute",
                                 top: "20px",
                                 left: "120px",
-                                filter: "grayscale(50%)"
+                                filter: "grayscale(60%)",
+                                scale
                             }}
                         />
-                        <img
+                        <motion.img
                             src={sanfrancisco}
                             alt="San Francisco"
                             style={{
-                                height: "160px",
+                                height: "120px",
                                 position: "absolute",
                                 top: "300px",
                                 left: "90px",
-                                filter: "grayscale(50%)"
+                                filter: "grayscale(60%)",
+                                scale
                             }}
                         />
-                        <img
+                        <motion.img
                             src={nantes}
                             alt="Nantes"
                             style={{
-                                height: "80px",
+                                height: "55px",
                                 position: "absolute",
-                                top: "280px",
+                                top: "260px",
                                 left: "350px",
-                                filter: "grayscale(50%)"
+                                filter: "grayscale(60%)",
+                                scale
 
                             }}
                         />
-                        <img
+                        <motion.img
                             src={firminGirard}
                             alt="Firmin Girard"
                             style={{
-                                height: "155px",
+                                height: "115px",
                                 position: "absolute",
                                 top: "70px",
                                 left: "360px",
-                                filter: "grayscale(50%)"
+                                filter: "grayscale(60%)",
+                                scale
 
                             }}
                         />
-                        <img
+                        <motion.img
                             src={rothko}
                             alt="Rothko"
                             style={{
-                                height: "210px",
+                                height: "170px",
                                 position: "absolute",
                                 top: "360px",
-                                left: "260px"
+                                left: "270px",
+                                scale
                             }}
                         />
                     </Grid>

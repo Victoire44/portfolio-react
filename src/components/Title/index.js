@@ -1,13 +1,22 @@
-import React, {cloneElement} from "react";
+import React, { cloneElement } from "react";
 import { makeStyles, Divider } from "@material-ui/core/";
 import { motion } from "framer-motion"
 
 const useStyles = makeStyles(theme => ({
     title: {
-        fontSize: "30px",
+        fontSize: theme.spacing(6),
         fontFamily: "'Poiret One', cursive",
         fontWeight: 800,
-        textTransform: "uppercase"
+        textTransform: "uppercase",
+        "@media (max-width: 600px)": {
+            fontSize: theme.spacing(2.8),
+        }
+    },
+    divider: {
+        marginBottom: theme.spacing(8),
+        "@media (max-width: 600px)": {
+            marginBottom: theme.spacing(4),
+        }
     }
 }));
 
@@ -30,7 +39,7 @@ export default function Title(props) {
                     className: classes.title
                 })}
             </motion.div>
-            <Divider style={{marginBottom: "40px"}}/>
+            <Divider className={classes.divider} />
         </motion.div>
     )
 }
