@@ -11,7 +11,10 @@ const useStyles = makeStyles(theme => ({
         paddingLeft: 0,
         width: "100vw",
         display: "flex",
-        justifyContent: "center"
+        justifyContent: "center",
+        "& .active": {
+            color: "grey",
+        }
     },
     navbar: props => ({
         width: "100%",
@@ -24,9 +27,9 @@ const useStyles = makeStyles(theme => ({
         width: "100%",
         height: "1px",
         borderRadius: "4px",
-        background: "#000",
+        background: "grey",
         position: "absolute",
-        bottom: "-3px"
+        bottom: "-5px"
     },
     menuItem: {
         fontSize: theme.spacing(3.6),
@@ -35,18 +38,16 @@ const useStyles = makeStyles(theme => ({
         position: "relative",
         cursor: "pointer",
         textTransform: "uppercase",
-        fontFamily: "'Poiret One', cursive",
-        fontWeight: 1000,
-        "@media (max-width: 600px)":{
+        fontFamily: "'Lato', sans-serif",
+        // fontFamily: "'Poiret One', cursive",
+        fontWeight: 500,
+        "&:hover": {
+            color: "grey",
+        },
+        "@media (max-width: 600px)": {
             marginLeft: theme.spacing(2),
             marginRight: theme.spacing(2),
             fontSize: theme.spacing(3)
-        },
-        "&.selected":{
-            fontSize: theme.spacing(4),
-            "@media (max-width: 600px)":{
-                fontSize: theme.spacing(3.4)
-            }
         }
     }
 }))
@@ -98,6 +99,8 @@ export default function NavBar({ isSticky }) {
                         <ol style={{ transform: "translateZ(0)" }}>
                             {menu.map(({ menuItem, to }, i) => (
                                 <Link to={to}
+                                    activeClass="active"
+                                    onSetActive={() => setSelected(i)}
                                     smooth={true}
                                     spy={true}
                                     duration={600}

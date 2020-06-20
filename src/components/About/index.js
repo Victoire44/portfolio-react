@@ -49,7 +49,7 @@ export default function About() {
                 </Title>
                 <Grid container>
                     <Grid item md={6} >
-                        <Typography paragraph align="justify" className={classes.description}>
+                        <Typography paragraph className={classes.description}>
                             <Box lineHeight={2}>
                                 Certified Full-Stack Web Developer at UC Berkeley, I am equipped with the skills needed to create effective application from creation to execution.
                                 My goal is to develop powerful products with fast user interface and optimized performance while getting an attractive UI/UX interfaces.

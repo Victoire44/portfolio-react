@@ -4,8 +4,7 @@ import Title from "../Title";
 
 const useStyles = makeStyles(theme => ({
     root: {
-        background: "#000",
-        opacity: .9,
+        background: "#191919",
         paddingTop: theme.spacing(10),
         "& .MuiDivider-root": {
             background: "#fff"
@@ -20,6 +19,26 @@ const useStyles = makeStyles(theme => ({
         justifyContent: "flex-end",
         "@media (max-width: 600px)": {
             justifyContent: "flex-start"
+        },
+        "& .MuiLink-root": {
+            textDecoration: "none",
+            position: "relative",
+            "&:after": {
+                content: "''",
+                height: "1px",
+                borderRadius: "4px",
+                position: "absolute",
+                width: "100%",
+                background: "white",
+                bottom: -5,
+                left: 20,
+                right: -20,
+                transform: "scale(0)",
+                transition: "transform .4s",
+            },
+            "&:hover:after": {
+                transform: "scale(1)",
+            },
         }
     },
     networksItem: {
@@ -30,8 +49,7 @@ const useStyles = makeStyles(theme => ({
         }
     },
     footer: {
-        background: "#000",
-        opacity: .9,
+        background: "#191919",
         color: "#fff",
         display: "flex",
         justifyContent: "center"

@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useRef } from "react";
-import { Container, makeStyles, Typography } from "@material-ui/core";
+import { Container, makeStyles, Typography, Link } from "@material-ui/core";
 import SocialNetwork from "../SocialNetwork";
 import { motion } from "framer-motion";
 import NavBar from "../NavBar"
@@ -30,6 +30,26 @@ const useStyles = makeStyles(theme => ({
         height: "100%",
         flexDirection: "column",
         justifyContent: "center",
+        "& .MuiLink-root": {
+            color: "grey",
+            position: "relative",
+            textDecoration: "none",
+            "&:after": {
+                content: "''",
+                height: "1px",
+                borderRadius: "4px",
+                position: "absolute",
+                width: "100%",
+                background: "grey",
+                bottom: -5,
+                left: 0,
+                transform: "scale(1)",
+                transition: "transform .4s",
+            },
+            "&:hover:after": {
+                transform: "scale(0)",
+            },
+        },
         "@media (max-width: 600px)": {
             padding: theme.spacing(0, 7)
         },
@@ -99,7 +119,7 @@ export default function Header() {
             <Container maxWidth="md" className={classes.networks}>
                 <SocialNetwork />
             </Container>
-            <Container maxWidth="sm" style={{ height: "100%", padding: 0 }}>
+            <Container maxWidth="md" style={{ height: "100%", padding: 0 }}>
                 <motion.div initial="hidden"
                     animate="visible"
                     transition={{ duration: 0.7 }}
@@ -107,7 +127,7 @@ export default function Header() {
                     className={classes.description}>
                     <Typography>I'm Victoire Baron. </Typography>
                     <Typography>Front End Developer based in San Francisco.</Typography>
-                    <Typography>Currently building user interface a photographer/moviemaker website.</Typography>
+                    <Typography>Currently building user interface of <Link href="https://remibesse.com" target="_blank" className={classes.link} >this website</Link>.</Typography>
                 </motion.div>
             </Container >
             <div ref={menuRef} style={{ position: "absolute", bottom: "70px", height: "64px" }}>

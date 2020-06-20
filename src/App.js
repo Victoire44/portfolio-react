@@ -15,8 +15,7 @@ const theme = createMuiTheme({
   spacing: 5,
   breakpoints: {
     values: {
-      md: 1100,
-      sm: 860
+      md: 1100
     }
   }
 })
@@ -32,7 +31,7 @@ export default function App() {
   return (
     <div>
       <Helmet>
-        <link href="https://fonts.googleapis.com/css2?family=Poiret+One&display=swap" rel="stylesheet" />
+        <link href="https://fonts.googleapis.com/css2?family=Lato&family=Poiret+One&display=swap" rel="stylesheet" />
         <link rel="icon" type="image/svg+xml" href={FaviconSvg} />
         <link rel="icon" type="image/png" href={FaviconPng} />
         <title>Victoire Baron</title>

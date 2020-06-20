@@ -30,17 +30,17 @@ export default function SocialNetwork(props) {
         >
             <Link href="https://github.com/Victoire44" target="_blank" >
                 <IconButton className={classes.iconButton}>
-                    <GitHubIcon className={classes.icons} fontSize="large" aria-label="github" />
+                    <GitHubIcon className={classes.icons} style={{fontSize: "29px"}} aria-label="github" />
                 </IconButton>
             </Link>
             <Link href="https://www.linkedin.com/in/victoirebaron/?locale=en_US" target="_blank">
                 <IconButton className={classes.iconButton}>
-                    <LinkedInIcon className={classes.icons} fontSize="large" aria-label="linkedin" />
+                    <LinkedInIcon className={classes.icons} style={{fontSize: "35px"}} aria-label="linkedin" />
                 </IconButton>
             </Link>
             <Link href="mailto:me@victoirebaron.com" target="_blank">
                 <IconButton className={classes.iconButton}>
-                    <EmailIcon className={classes.icons} fontSize="large" aria-label="email" />
+                    <EmailIcon className={classes.icons} style={{fontSize: "36px"}}  aria-label="email" />
                 </IconButton>
             </Link>
         </motion.div>
