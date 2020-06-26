@@ -1,5 +1,5 @@
 import React from "react";
-import { makeStyles, CardHeader, Container, Typography, Paper, Box, Divider, Grid, Link } from "@material-ui/core/";
+import { makeStyles, Container, Typography, Paper, Grid, Link } from "@material-ui/core/";
 import html from "./assets/html.png";
 import css from "./assets/css.png";
 import bootstrap from "./assets/bootstrap.png";
@@ -13,20 +13,12 @@ import mysql from "./assets/mysql.png";
 import mongo from "./assets/mongodb.png";
 import framer from "./assets/framer.png";
 import Title from "../Title";
+import Section from "../Section";
 
 const useStyles = makeStyles(theme => ({
     root: {
-        minHeight: `calc(100vh - ${theme.spacing(35)}px)`,
-        width: "100%",
-        padding: theme.spacing(20, 0, 15, 0),
-        backgroundSize: "cover",
-        backgroundAttachment: "fixed",
-        backgroundRepeat: "no-repeat",
         background: "#f2f2f2",
-        "@media (max-width: 600px)": {
-            padding: theme.spacing(14, 0, 5, 0),
-        },
-        "& .MuiTypography-root":{
+        "& .MuiTypography-root": {
             fontFamily: "'Poiret One', cursive",
             fontWeight: 800
         },
@@ -54,16 +46,14 @@ const useStyles = makeStyles(theme => ({
     },
 }));
 
-
-
 export default function Skills() {
     const classes = useStyles();
 
     return (
-        <div id="skills" className={classes.root}>
-            <Container maxWidth="md">
+        <div className={classes.root}>
+            <Section id="skills">
                 <Title>
-                    <Typography>Skills</Typography>
+                    <Typography>Technologies and tools</Typography>
                 </Title>
                 <Paper elevation={1} className={classes.paper} >
                     <Grid container>
@@ -141,7 +131,7 @@ export default function Skills() {
                         </Grid>
                     </Grid>
                 </Paper>
-            </Container>
+            </Section>
         </div>
     )
 }

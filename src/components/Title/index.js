@@ -9,7 +9,7 @@ const useStyles = makeStyles(theme => ({
         fontWeight: 800,
         textTransform: "uppercase",
         "@media (max-width: 600px)": {
-            fontSize: theme.spacing(2.8),
+            fontSize: theme.spacing(4),
         }
     },
     divider: {
@@ -27,6 +27,7 @@ export default function Title(props) {
         visible: { opacity: 1, x: 0 },
         hidden: { opacity: 0, x: -40 }
     }
+
     return (
         <motion.div mb={10} >
             <motion.div

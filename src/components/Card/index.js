@@ -1,25 +1,27 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { makeStyles, IconButton, Link, Typography, Paper } from "@material-ui/core";
 import GitHubIcon from "@material-ui/icons/GitHub";
 import LockIcon from '@material-ui/icons/Lock';
+import { motion } from "framer-motion";
 
-const radius = 0.5
 const useStyles = makeStyles(theme => ({
     paper: props => ({
-        height: 230,
+        height: "300px",
         position: "relative",
-        marginBottom: theme.spacing(8),
-        borderRadius: theme.spacing(radius),
         "&:hover": {
             cursor: props.locked ? "not-allowed" : "pointer"
         },
-        "& .MuiTypography-root":{
-             color: "#fff"
+        "& .MuiTypography-root": {
+            color: "#fff"
+        },
+        "& .MuiPaper-rounded": {
+            borderRadius: 0
         }
     }),
     media: {
-        height: "100%",
-        borderRadius: theme.spacing(radius)
+        maxHeight: "100%",
+        maxWidth: "100%",
+        objectFit: "cover"
     },
     content: {
         color: "#fff",
@@ -32,7 +34,6 @@ const useStyles = makeStyles(theme => ({
         left: 0,
         width: "100%",
         height: "100%",
-        borderRadius: theme.spacing(radius),
         opacity: 0,
         transition: "all 300ms ease-out",
         "&:hover": {
@@ -41,10 +42,14 @@ const useStyles = makeStyles(theme => ({
     },
     info: {
         padding: theme.spacing(2, 5),
+        "& .MuiTypography-root": {
+            fontFamily: "'Lato', sans-serif",
+        }
     },
     title: {
         color: "#fff",
-        textTransform: "uppercase"
+        textTransform: "uppercase",
+        fontWeight: 600
     },
     description: {
         lineHeight: 1.8,
@@ -61,16 +66,12 @@ const useStyles = makeStyles(theme => ({
 
 export default function MediaCard(props) {
     const classes = useStyles(props);
+    const [hover, setHover] = useState(false)
 
     return (
-        <Paper className={classes.paper} elevation={2}>
-            <img
-                className={classes.media}
-                src={props.image}
-                alt={props.alt}
-            />
+        <div className={classes.paper} onMouseEnter={() => setHover(true)} onMouseLeave={() => setHover(false)} elevation={2} style={{ backgroundImage: `url(${props.image}`, backgroundSize: 'cover', backgroundPosition: 'center' }}>
             <Link href={props.heroku} color="inherit" underline="none" target="_blank" rel="noopener" className={classes.content} align="center">
-                <div className={classes.info}>
+                <motion.div animate={hover ? { y: 0 } : { y: 10 }} transition={{ duration: 0.2 }} className={classes.info}>
                     <Typography gutterBottom variant="h6" className={classes.title}>
                         {props.title}
                     </Typography>
@@ -84,8 +85,8 @@ export default function MediaCard(props) {
                             <GitHubIcon className={classes.icons} fontSize="medium" aria-label="github" />)}
                         </IconButton>
                     </Link>
-                </div>
+                </motion.div>
             </Link>
-        </Paper>
+        </div>
     );
 }

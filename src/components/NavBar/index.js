@@ -32,22 +32,26 @@ const useStyles = makeStyles(theme => ({
         bottom: "-5px"
     },
     menuItem: {
-        fontSize: theme.spacing(3.6),
+        fontSize: "1.2vw",
         marginLeft: theme.spacing(3),
         marginRight: theme.spacing(3),
         position: "relative",
         cursor: "pointer",
         textTransform: "uppercase",
         fontFamily: "'Lato', sans-serif",
-        // fontFamily: "'Poiret One', cursive",
         fontWeight: 500,
         "&:hover": {
             color: "grey",
         },
-        "@media (max-width: 600px)": {
+        "@media (max-width: 1280px)": {
             marginLeft: theme.spacing(2),
             marginRight: theme.spacing(2),
             fontSize: theme.spacing(3)
+        },
+        "@media (max-width: 350px)": {
+            marginLeft: theme.spacing(1),
+            marginRight: theme.spacing(1),
+            fontSize: theme.spacing(2)
         }
     }
 }))
@@ -72,7 +76,6 @@ export default function NavBar({ isSticky }) {
         {
             menuItem: "About",
             to: "about"
-
         },
         {
             menuItem: "Skills",

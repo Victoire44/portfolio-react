@@ -6,6 +6,9 @@ const useStyles = makeStyles(theme => ({
     root: {
         background: "#191919",
         paddingTop: theme.spacing(10),
+        "@media (max-width: 1280px)": {
+            padding: theme.spacing(10, 10, 0, 10),
+        },
         "& .MuiDivider-root": {
             background: "#fff"
         },
@@ -31,13 +34,12 @@ const useStyles = makeStyles(theme => ({
                 width: "100%",
                 background: "white",
                 bottom: -5,
-                left: 20,
-                right: -20,
-                transform: "scale(0)",
+                left: 0,
+                transform: "scale(1)",
                 transition: "transform .4s",
             },
             "&:hover:after": {
-                transform: "scale(1)",
+                transform: "scale(0)",
             },
         }
     },
@@ -62,9 +64,9 @@ export default function Contact() {
     return (
         <div id="contact">
             <AppBar position="static" className={classes.root}>
-                <Container maxWidth="md">
+                <Container maxWidth="lg">
                     <Title>
-                        <Typography>Contact</Typography>
+                        <Typography>Keep in touch</Typography>
                     </Title>
                     <Box className={classes.contact}>
                         <Typography variant="h6">Tel: +1 415-416-0428</Typography>
@@ -72,14 +74,14 @@ export default function Contact() {
                             <Typography variant="h6">Email: me(at)victoirebaron.com</Typography>
                         </Link>
                         <Box mt={5} className={classes.networks}>
-                            <Link href="https://www.linkedin.com/in/victoirebaron/?locale=en_US" target="_blank">
-                                <Typography variant="h6" className={classes.networksItem}>LinkedIn</Typography>
+                            <Link href="https://www.linkedin.com/in/victoirebaron/?locale=en_US" target="_blank" className={classes.networksItem}>
+                                <Typography variant="h6">LinkedIn</Typography>
                             </Link>
-                            <Link href="https://github.com/Victoire44" target="_blank">
-                                <Typography variant="h6" className={classes.networksItem}>Github</Typography>
+                            <Link href="https://github.com/Victoire44" target="_blank" className={classes.networksItem}>
+                                <Typography variant="h6">Github</Typography>
                             </Link>
-                            <Link href="https://github.com/Victoire44" target="_blank">
-                                <Typography variant="h6" className={classes.networksItem}>Resume</Typography>
+                            <Link href="https://github.com/Victoire44" target="_blank" className={classes.networksItem}>
+                                <Typography variant="h6">Resume</Typography>
                             </Link>
                         </Box>
                     </Box>

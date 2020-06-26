@@ -30,10 +30,19 @@ const useStyles = makeStyles(theme => ({
         height: "100%",
         flexDirection: "column",
         justifyContent: "center",
+        "@media (max-width: 1280px)": {
+            padding: theme.spacing(0, 10),
+        },
+        "@media (max-width: 600px)": {
+            padding: theme.spacing(0, 8)
+        },
         "& .MuiLink-root": {
-            color: "grey",
+            color: "#000",
             position: "relative",
             textDecoration: "none",
+            "&:hover": {
+                color: "grey"
+            },
             "&:after": {
                 content: "''",
                 height: "1px",
@@ -44,22 +53,19 @@ const useStyles = makeStyles(theme => ({
                 bottom: -5,
                 left: 0,
                 transform: "scale(1)",
-                transition: "transform .4s",
+                transition: "transform .3s",
             },
             "&:hover:after": {
                 transform: "scale(0)",
             },
         },
-        "@media (max-width: 600px)": {
-            padding: theme.spacing(0, 7)
-        },
         "& .MuiTypography-root": {
             fontFamily: "'Poiret One', cursive",
-            fontSize: theme.spacing(10),
+            fontSize: "3.7vw",
             fontWeight: 800,
             "@media (max-width: 600px)": {
-                fontSize: theme.spacing(5)
-            }
+                fontSize: "7vw"
+            },
         }
     },
     navbar: props => ({
@@ -76,6 +82,9 @@ const useStyles = makeStyles(theme => ({
         display: "flex",
         justifyContent: "flex-end",
         padding: theme.spacing(14, 0, 0, 0),
+        "@media (max-width: 1280px)": {
+            padding: theme.spacing(12, 7, 0, 7)
+        },
         "@media (max-width: 600px)": {
             padding: theme.spacing(12, 7, 0, 7)
         },
@@ -91,7 +100,7 @@ const useStyles = makeStyles(theme => ({
 }))
 
 
-export default function Header() {
+export default function Header({ ref }) {
     const [isSticky, setSticky] = useState(false);
     const classes = useStyles({ isSticky: isSticky });
     const menuRef = useRef(null)
@@ -115,49 +124,24 @@ export default function Header() {
     }, [])
 
     return (
-        <div id="header" className={classes.root}>
-            <Container maxWidth="md" className={classes.networks}>
+        <div ref={ref} id="header" className={classes.root}>
+            <Container maxWidth="lg" className={classes.networks}>
                 <SocialNetwork />
             </Container>
-            <Container maxWidth="md" style={{ height: "100%", padding: 0 }}>
+            <Container maxWidth="lg" style={{ height: "100%", padding: 0 }}>
                 <motion.div initial="hidden"
                     animate="visible"
                     transition={{ duration: 0.7 }}
                     variants={description}
                     className={classes.description}>
-                    <Typography>I'm Victoire Baron. </Typography>
-                    <Typography>Front End Developer based in San Francisco.</Typography>
-                    <Typography>Currently building user interface of <Link href="https://remibesse.com" target="_blank" className={classes.link} >this website</Link>.</Typography>
+                    <Typography >I'm Victoire Baron.</Typography>
+                    <Typography >Front End Developer based in San Francisco.</Typography>
+                    <Typography >Currently building user interface of this <Link href="https://remibesse.com" target="_blank">website</Link>.</Typography>
                 </motion.div>
-            </Container >
+            </Container>
             <div ref={menuRef} style={{ position: "absolute", bottom: "70px", height: "64px" }}>
                 <NavBar isSticky={isSticky} />
             </div>
         </div >
     );
 }
-
-
-{/* <Parallax
-                bgImage={require('./assets/parallax.jpeg')}
-                bgImageAlt="background"
-                strength={300}
-            > */}
-{/* </Parallax> */ }
-{/* <div style={{
-                position: "absolute",
-                left: "0%",
-                top: "auto",
-                right: "0%",
-                bottom: "2%",
-                height: "50%"
-            }}> */}
-{/* <Link
-                    to="works"
-                    smooth={true}
-                    spy={true}
-                    duration={1000}>
-                    <ExpandMoreIcon color="primary" style={{ position: "absolute", bottom: 0, right: "50%", fontSize: 40, height: "80px", color: "#000" }} />
-                </Link> */}
-{/* <AppBar className={classes.appbar}> */ }
-

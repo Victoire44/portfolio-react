@@ -10,14 +10,8 @@ import FaviconSvg from "./assets/favicon.svg";
 import FaviconPng from "./assets/favicon.png";
 import { makeStyles } from "@material-ui/core/styles";
 
-
 const theme = createMuiTheme({
   spacing: 5,
-  breakpoints: {
-    values: {
-      md: 1100
-    }
-  }
 })
 const useStyles = makeStyles(theme => ({
   body: {
@@ -31,7 +25,7 @@ export default function App() {
   return (
     <div>
       <Helmet>
-        <link href="https://fonts.googleapis.com/css2?family=Lato&family=Poiret+One&display=swap" rel="stylesheet" />
+        <link href="https://fonts.googleapis.com/css2?family=Lato&family=Spartan&family=Poiret+One&display=swap" rel="stylesheet" />
         <link rel="icon" type="image/svg+xml" href={FaviconSvg} />
         <link rel="icon" type="image/png" href={FaviconPng} />
         <title>Victoire Baron</title>
