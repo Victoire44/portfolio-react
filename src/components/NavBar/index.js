@@ -29,7 +29,7 @@ const useStyles = makeStyles(theme => ({
         borderRadius: "4px",
         background: "grey",
         position: "absolute",
-        bottom: "-5px"
+        bottom: "-21px"
     },
     menuItem: {
         fontSize: "1.2vw",

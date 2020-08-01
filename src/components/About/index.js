@@ -10,9 +10,6 @@ import { motion, useTransform, useViewportScroll, useMotionValue } from "framer-
 import Section from "../Section";
 
 const useStyles = makeStyles(theme => ({
-    root: {
-        background: "#fafafa"
-    },
     gridImages: {
         position: "relative",
         "@media (max-width: 600px)": {
@@ -32,7 +29,7 @@ export default function About() {
     const scale = useTransform(scrollYProgress, [0, 0.25, 0.6, 0.95, 1], [0.5, 1, 1.5, 1, 0.5]);
 
     return (
-        <Section id="about">
+        <Section id="about" style={{ background: "#fafafa" }}>
             <Title>
                 <Typography>Hello, I'm Victoire</Typography>
             </Title>

@@ -71,7 +71,7 @@ export default function MediaCard(props) {
     return (
         <div className={classes.paper} onMouseEnter={() => setHover(true)} onMouseLeave={() => setHover(false)} elevation={2} style={{ backgroundImage: `url(${props.image}`, backgroundSize: 'cover', backgroundPosition: 'center' }}>
             <Link href={props.heroku} color="inherit" underline="none" target="_blank" rel="noopener" className={classes.content} align="center">
-                <motion.div animate={hover ? { y: 0 } : { y: 10 }} transition={{ duration: 0.2 }} className={classes.info}>
+                <motion.div animate={hover ? { y: 0 } : { y: 8 }} transition={{ duration: 0.2 }} className={classes.info}>
                     <Typography gutterBottom variant="h6" className={classes.title}>
                         {props.title}
                     </Typography>

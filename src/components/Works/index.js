@@ -19,9 +19,6 @@ import Title from "../Title";
 import Section from "../Section";
 
 const useStyles = makeStyles(theme => ({
-    root: {
-        background: "#f2f2f2",
-    },
     paper: {
         textAlign: "center",
         "& .MuiPaper-rounded": {
@@ -42,7 +39,7 @@ export default function Works() {
     const [categoriesToShow, setCategoriesToShow] = React.useState(all)
 
     return (
-        <Section id="works" className={classes.root}>
+        <Section id="works" style={{ background: "#f5f5f5" }}>
             <Title>
                 <Typography>Works</Typography>
             </Title>

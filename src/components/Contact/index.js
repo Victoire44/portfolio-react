@@ -9,6 +9,9 @@ const useStyles = makeStyles(theme => ({
         "@media (max-width: 1280px)": {
             padding: theme.spacing(10, 10, 0, 10),
         },
+        "@media (max-width: 600px)": {
+            padding: theme.spacing(10, 3, 0, 3),
+        },
         "& .MuiDivider-root": {
             background: "#fff"
         },

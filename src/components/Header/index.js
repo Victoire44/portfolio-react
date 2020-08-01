@@ -30,8 +30,11 @@ const useStyles = makeStyles(theme => ({
         height: "100%",
         flexDirection: "column",
         justifyContent: "center",
+        "@media (max-width: 1500px)": {
+            padding: theme.spacing(0, 17),
+        },
         "@media (max-width: 1280px)": {
-            padding: theme.spacing(0, 10),
+            padding: theme.spacing(0, 15),
         },
         "@media (max-width: 600px)": {
             padding: theme.spacing(0, 8)
@@ -50,7 +53,7 @@ const useStyles = makeStyles(theme => ({
                 position: "absolute",
                 width: "100%",
                 background: "grey",
-                bottom: -5,
+                bottom: "-20px",
                 left: 0,
                 transform: "scale(1)",
                 transition: "transform .3s",
@@ -82,12 +85,18 @@ const useStyles = makeStyles(theme => ({
         display: "flex",
         justifyContent: "flex-end",
         padding: theme.spacing(14, 0, 0, 0),
-        "@media (max-width: 1280px)": {
+        "@media (max-width: 1500px)": {
             padding: theme.spacing(12, 7, 0, 7)
+        },
+        "@media (max-width: 1280px)": {
+            padding: theme.spacing(12, 20, 0, 20)
+        },
+        "@media (max-width: 1080px)": {
+            padding: theme.spacing(12, 10, 0, 10)
         },
         "@media (max-width: 600px)": {
             padding: theme.spacing(12, 7, 0, 7)
-        },
+        }
     },
     underline: {
         width: "100%",
