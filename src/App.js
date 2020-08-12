@@ -4,7 +4,7 @@ import Header from "./components/Header";
 import About from "./components/About";
 import Skills from "./components/Skills";
 import Works from "./components/Works";
-import Contact from "./components/Contact";
+import Footer from "./components/Footer";
 import { Helmet } from "react-helmet";
 import FaviconSvg from "./assets/favicon.svg";
 import FaviconPng from "./assets/favicon.png";
@@ -39,7 +39,7 @@ export default function App() {
         <Works />
         <About />
         <Skills />
-        <Contact />
+        <Footer />
       </ThemeProvider>
     </div>
   )

@@ -29,17 +29,16 @@ const useStyles = makeStyles(theme => ({
         borderRadius: "4px",
         background: "grey",
         position: "absolute",
-        bottom: "-21px"
+        bottom: "-10px"
     },
     menuItem: {
-        fontSize: "1.2vw",
+        font: "1.2vw Lato, sans-serif",
+        fontWeight: 400,
         marginLeft: theme.spacing(3),
         marginRight: theme.spacing(3),
         position: "relative",
         cursor: "pointer",
         textTransform: "uppercase",
-        fontFamily: "'Lato', sans-serif",
-        fontWeight: 500,
         "&:hover": {
             color: "grey",
         },

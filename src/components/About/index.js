@@ -10,11 +10,11 @@ import { motion, useTransform, useViewportScroll, useMotionValue } from "framer-
 import Section from "../Section";
 
 const useStyles = makeStyles(theme => ({
-    gridImages: {
+    images: {
         position: "relative",
-        "@media (max-width: 600px)": {
-            display: "none"
-        }
+        height: 0,
+        width: "100%",
+        paddingBottom: "100%",
     },
     description: {
         fontFamily: "'Lato', sans-serif",
@@ -25,8 +25,7 @@ const useStyles = makeStyles(theme => ({
 export default function About() {
     const classes = useStyles();
 
-    const { scrollYProgress } = useViewportScroll();
-    const scale = useTransform(scrollYProgress, [0, 0.25, 0.6, 0.95, 1], [0.5, 1, 1.5, 1, 0.5]);
+    const { scrollY } = useViewportScroll();
 
     return (
         <Section id="about" style={{ background: "#fafafa" }}>
@@ -47,67 +46,68 @@ export default function About() {
                                 </Box>
                     </Typography>
                 </Grid>
-                <Grid item md={6} className={classes.gridImages}>
-                    <motion.img
-                        src={portrait}
-                        alt="Portrait"
-                        style={{
-                            height: "180px",
-                            position: "absolute",
-                            top: "60px",
-                            left: "120px",
-                            filter: "grayscale(60%)",
-                            scale
-                        }}
-                    />
-                    <motion.img
-                        src={sanfrancisco}
-                        alt="San Francisco"
-                        style={{
-                            height: "120px",
-                            position: "absolute",
-                            top: "340px",
-                            left: "90px",
-                            filter: "grayscale(60%)",
-                            scale
-                        }}
-                    />
-                    <motion.img
-                        src={nantes}
-                        alt="Nantes"
-                        style={{
-                            height: "55px",
-                            position: "absolute",
-                            top: "300px",
-                            left: "350px",
-                            filter: "grayscale(60%)",
-                            scale
-                        }}
-                    />
-                    <motion.img
-                        src={firminGirard}
-                        alt="Firmin Girard"
-                        style={{
-                            height: "115px",
-                            position: "absolute",
-                            top: "110px",
-                            left: "380px",
-                            filter: "grayscale(60%)",
-                            scale
-                        }}
-                    />
-                    <motion.img
-                        src={rothko}
-                        alt="Rothko"
-                        style={{
-                            height: "170px",
-                            position: "absolute",
-                            top: "400px",
-                            left: "270px",
-                            scale
-                        }}
-                    />
-
+                <Grid item md={6}>
+                    <div className={classes.images}>
+                        <motion.img
+                            src={portrait}
+                            alt="Portrait"
+                            style={{
+                                width: "40%",
+                                position: "absolute",
+                                top: "20%",
+                                left: "10%",
+                                filter: "grayscale(60%)",
+                                y: useTransform(scrollY, [1000, 4000], [150, -400])
+                            }}
+                        />
+                        <motion.img
+                            src={sanfrancisco}
+                            alt="San Francisco"
+                            style={{
+                                height: "27%",
+                                position: "absolute",
+                                top: "75%",
+                                left: "5%",
+                                filter: "grayscale(60%)",
+                                y: useTransform(scrollY, [1000, 4000], [100, -400])
+                            }}
+                        />
+                        <motion.img
+                            src={nantes}
+                            alt="Nantes"
+                            style={{
+                                height: "14%",
+                                position: "absolute",
+                                top: "48%",
+                                left: "52%",
+                                filter: "grayscale(60%)",
+                                y: useTransform(scrollY, [1000, 4000], [100, -100])
+                            }}
+                        />
+                        <motion.img
+                            src={firminGirard}
+                            alt="Firmin Girard"
+                            style={{
+                                height: "28%",
+                                position: "absolute",
+                                top: "30%",
+                                left: "55%",
+                                filter: "grayscale(60%)",
+                                y: useTransform(scrollY, [1000, 4000], [100, -300])
+                            }}
+                        />
+                        <motion.img
+                            src={rothko}
+                            alt="Rothko"
+                            style={{
+                                height: "37%",
+                                position: "absolute",
+                                top: "74%",
+                                left: "38%",
+                                y: useTransform(scrollY, [1000, 4000], [100, -200])
+                            }}
+                        />
+                    </div>
                 </Grid>
             </Grid>
         </Section>

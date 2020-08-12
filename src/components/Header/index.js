@@ -53,7 +53,7 @@ const useStyles = makeStyles(theme => ({
                 position: "absolute",
                 width: "100%",
                 background: "grey",
-                bottom: "-20px",
+                bottom: "-10px",
                 left: 0,
                 transform: "scale(1)",
                 transition: "transform .3s",

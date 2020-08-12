@@ -1,5 +1,5 @@
 import React from "react";
-import { makeStyles, Container, AppBar, Toolbar, Typography, Box, Divider, Link } from "@material-ui/core";
+import { makeStyles, Container, AppBar, Typography, Box, Link } from "@material-ui/core";
 import Title from "../Title";
 
 const useStyles = makeStyles(theme => ({
@@ -53,15 +53,21 @@ const useStyles = makeStyles(theme => ({
             marginRight: theme.spacing(4)
         }
     },
+    contact: {
+        "& .MuiTypography-root": {
+            fontFamily: "'Lato', sans-serif",
+            fontSize: "20px"
+        }
+    },
     footer: {
         background: "#191919",
         color: "#fff",
         display: "flex",
         justifyContent: "center"
     }
-}));
+}))
 
-export default function Contact() {
+export default function Footer() {
     const classes = useStyles();
 
     return (
@@ -72,19 +78,19 @@ export default function Contact() {
                         <Typography>Keep in touch</Typography>
                     </Title>
                     <Box className={classes.contact}>
-                        <Typography variant="h6">Tel: +1 415-416-0428</Typography>
+                        <Typography>Tel: +1 415-416-0428</Typography>
                         <Link href="mailto:me@victoirebaron.com" target="_blank">
-                            <Typography variant="h6">Email: me(at)victoirebaron.com</Typography>
+                            <Typography>Email: me(at)victoirebaron.com</Typography>
                         </Link>
                         <Box mt={5} className={classes.networks}>
                             <Link href="https://www.linkedin.com/in/victoirebaron/?locale=en_US" target="_blank" className={classes.networksItem}>
-                                <Typography variant="h6">LinkedIn</Typography>
+                                <Typography>LinkedIn</Typography>
                             </Link>
                             <Link href="https://github.com/Victoire44" target="_blank" className={classes.networksItem}>
-                                <Typography variant="h6">Github</Typography>
+                                <Typography>Github</Typography>
                             </Link>
-                            <Link href="https://github.com/Victoire44" target="_blank" className={classes.networksItem}>
-                                <Typography variant="h6">Resume</Typography>
+                            <Link href="./Resume.pdf" target="_blank" className={classes.networksItem}>
+                                <Typography>Resume</Typography>
                             </Link>
                         </Box>
                     </Box>
