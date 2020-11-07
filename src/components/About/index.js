@@ -1,12 +1,12 @@
 import React from "react";
-import { makeStyles, Typography, Box, Container, Grid } from "@material-ui/core";
+import { makeStyles, Typography, Box, Grid } from "@material-ui/core";
 import portrait from "./assets/portrait.jpg";
 import rothko from "./assets/rothko.jpg";
 import firminGirard from "./assets/firmin-girard.jpg";
 import sanfrancisco from "./assets/san-francisco.jpg";
 import nantes from "./assets/nantes.jpg";
 import Title from "../Title";
-import { motion, useTransform, useViewportScroll, useMotionValue } from "framer-motion"
+import { motion, useTransform, useViewportScroll } from "framer-motion"
 import Section from "../Section";
 
 const useStyles = makeStyles(theme => ({

@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { makeStyles, IconButton, Link, Typography, Paper } from "@material-ui/core";
+import { makeStyles, IconButton, Link, Typography } from "@material-ui/core";
 import GitHubIcon from "@material-ui/icons/GitHub";
 import LockIcon from '@material-ui/icons/Lock';
 import { motion } from "framer-motion";
