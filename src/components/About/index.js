@@ -57,7 +57,7 @@ export default function About() {
                                 top: "20%",
                                 left: "10%",
                                 filter: "grayscale(60%)",
-                                y: useTransform(scrollY, [1000, 4000], [150, -400])
+                                y: useTransform(scrollY, [1000, 4000], [100, -400])
                             }}
                         />
                         <motion.img
@@ -66,7 +66,7 @@ export default function About() {
                             style={{
                                 height: "27%",
                                 position: "absolute",
-                                top: "75%",
+                                top: "67%",
                                 left: "5%",
                                 filter: "grayscale(60%)",
                                 y: useTransform(scrollY, [1000, 4000], [100, -400])
@@ -78,7 +78,7 @@ export default function About() {
                             style={{
                                 height: "14%",
                                 position: "absolute",
-                                top: "48%",
+                                top: "43%",
                                 left: "52%",
                                 filter: "grayscale(60%)",
                                 y: useTransform(scrollY, [1000, 4000], [100, -100])
@@ -90,7 +90,7 @@ export default function About() {
                             style={{
                                 height: "28%",
                                 position: "absolute",
-                                top: "30%",
+                                top: "25%",
                                 left: "55%",
                                 filter: "grayscale(60%)",
                                 y: useTransform(scrollY, [1000, 4000], [100, -300])
@@ -102,7 +102,7 @@ export default function About() {
                             style={{
                                 height: "37%",
                                 position: "absolute",
-                                top: "74%",
+                                top: "67%",
                                 left: "38%",
                                 y: useTransform(scrollY, [1000, 4000], [100, -200])
                             }}

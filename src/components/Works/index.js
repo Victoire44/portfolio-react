@@ -13,6 +13,7 @@ import laminar from "../Works/assets/laminar.png";
 import netflix from "../Works/assets/netflix.png";
 import purrfectmatch from "../Works/assets/purr-fect-match.png";
 import campdad from "../Works/assets/campdad.png";
+import zeuxis from "../Works/assets/zeuxis.png";
 import remibesse from "../Works/assets/remi-besse.png";
 import firminGirard from "../Works/assets/firmin-girard.png";
 import Title from "../Title";
@@ -66,6 +67,21 @@ export default function Works() {
                             </Paper>
                         </Grid>
                         : null)}
+                                 {(categoriesToShow.includes("projects") ?
+                        <Grid item md={4} sm={6} xs={12}>
+                            <Paper className={classes.paper}>
+                                <Card
+                                    image={zeuxis}
+                                    title="Atelier Zeuxis"
+                                    alt="Atelier Zeuxis"
+                                    text="Art Gallery"
+                                    tools="WordPress"
+                                    heroku="https://atelierzeuxis.com/"
+                                    locked={false}
+                                />
+                            </Paper>
+                        </Grid>
+                        : null)}
                     {(categoriesToShow.includes("projects") ?
                         <Grid item md={4} sm={6} xs={12}>
                             <Paper className={classes.paper}>
@@ -73,7 +89,7 @@ export default function Works() {
                                     image={firminGirard}
                                     title="Firmin-Girard"
                                     alt="Firmin-Girard"
-                                    text="French painter Firmin-Girard website"
+                                    text="French painter Firmin-Girard website (not responsive)"
                                     tools="React.js & Material.UI"
                                     github="https://github.com/Victoire44/Firmin-Girard"
                                     heroku="https://victoire44.github.io/firmin-girard"
