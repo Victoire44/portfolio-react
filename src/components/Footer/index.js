@@ -78,7 +78,7 @@ export default function Footer() {
                         <Typography>Keep in touch</Typography>
                     </Title>
                     <Box className={classes.contact}>
-                        <Typography>Tel: +1 415-416-0428</Typography>
+                        <Typography>Tel: +33 7 49 56 39 39</Typography>
                         <Link href="mailto:me@victoirebaron.com" target="_blank">
                             <Typography>Email: me(at)victoirebaron.com</Typography>
                         </Link>

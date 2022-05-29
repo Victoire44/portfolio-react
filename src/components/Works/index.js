@@ -67,21 +67,6 @@ export default function Works() {
                             </Paper>
                         </Grid>
                         : null)}
-                                 {(categoriesToShow.includes("projects") ?
-                        <Grid item md={4} sm={6} xs={12}>
-                            <Paper className={classes.paper}>
-                                <Card
-                                    image={zeuxis}
-                                    title="Atelier Zeuxis"
-                                    alt="Atelier Zeuxis"
-                                    text="Art Gallery"
-                                    tools="WordPress"
-                                    heroku="https://atelierzeuxis.com/"
-                                    locked={false}
-                                />
-                            </Paper>
-                        </Grid>
-                        : null)}
                     {(categoriesToShow.includes("projects") ?
                         <Grid item md={4} sm={6} xs={12}>
                             <Paper className={classes.paper}>
@@ -98,6 +83,37 @@ export default function Works() {
                             </Paper>
                         </Grid>
                         : null)}
+                        {(categoriesToShow.includes("projects") ?
+               <Grid item md={4} sm={6} xs={12}>
+                   <Paper className={classes.paper}>
+                       <Card
+                           image={zeuxis}
+                           title="Atelier Zeuxis"
+                           alt="Atelier Zeuxis"
+                           text="Art Gallery"
+                           tools="WordPress"
+                           heroku="https://atelierzeuxis.com/"
+                           locked={false}
+                       />
+                   </Paper>
+               </Grid>
+                        : null)}
+                        {(categoriesToShow.includes("projects") ?
+                        <Grid item md={4} sm={6} xs={12}>
+                            <Paper className={classes.paper}>
+                                <Card
+                                    image={memory}
+                                    title="Animals Memory Game"
+                                    alt="Animals Memory Game"
+                                    tools="React.js"
+                                    text="Click on an image to earn points, but don't click on any more than once!"
+                                    github="https://github.com/Victoire44/clicky-game"
+                                    heroku="https://victoire44.github.io/clicky-game"
+                                    locked={false}
+                                />
+                            </Paper>
+                        </Grid>
+                        : null)}
                     {(categoriesToShow.includes("team") ?
                         <Grid item md={4} sm={6} xs={12}>
                             <Paper className={classes.paper}>
@@ -109,22 +125,6 @@ export default function Works() {
                                     tools="jQuery"
                                     github="https://github.com/Victoire44/project1"
                                     heroku="https://victoire44.github.io/project1/"
-                                    locked={false}
-                                />
-                            </Paper>
-                        </Grid>
-                        : null)}
-                    {(categoriesToShow.includes("projects") ?
-                        <Grid item md={4} sm={6} xs={12}>
-                            <Paper className={classes.paper}>
-                                <Card
-                                    image={memory}
-                                    title="Animals Memory Game"
-                                    alt="Animals Memory Game"
-                                    tools="React.js"
-                                    text="Click on an image to earn points, but don't click on any more than once!"
-                                    github="https://github.com/Victoire44/clicky-game"
-                                    heroku="https://victoire44.github.io/clicky-game"
                                     locked={false}
                                 />
                             </Paper>
