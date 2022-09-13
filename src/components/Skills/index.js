@@ -56,7 +56,7 @@ export default function Skills() {
             <Paper elevation={1} className={classes.paper} >
                 <Grid container>
                     <Grid item xs={3}>
-                        <Link href="https://www.w3.org/Style/CSS/Overview.en.html" target="-blank">
+                        <Link href="https://www.w3.org/standards/webdesign/htmlcss" target="-blank">
                             <img src={html} alt="HTML" className={classes.logos} />
                         </Link>
                         <Typography className={classes.title}>HTML</Typography>

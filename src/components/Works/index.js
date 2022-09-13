@@ -15,6 +15,7 @@ import purrfectmatch from "../Works/assets/purr-fect-match.png";
 import campdad from "../Works/assets/campdad.png";
 import zeuxis from "../Works/assets/zeuxis.png";
 import remibesse from "../Works/assets/remi-besse.png";
+import remiBesse from "../Works/assets/remibesse.png";
 import firminGirard from "../Works/assets/firmin-girard.png";
 import Title from "../Title";
 import Section from "../Section";
@@ -27,7 +28,6 @@ const useStyles = makeStyles(theme => ({
         }
     }
 }));
-
 
 function arrayEquals(array1, array2) {
     return array1.length === array2.length && array1.every(value => array2.includes(value))
@@ -58,10 +58,25 @@ export default function Works() {
                                     image={remibesse}
                                     title="Remi Besse"
                                     alt="Remi Besse"
-                                    text="Portfolio of Remi Besse French artist, moviemaker and photographer"
+                                    text="Remi Besse, French artist, moviemaker and photographer"
                                     tools="React.js, Material.UI & Framer"
                                     github="https://github.com/Victoire44/rbportfolio"
                                     heroku="https://remibesse.com"
+                                    locked={false}
+                                />
+                            </Paper>
+                        </Grid>
+                        : null)}
+                         {(categoriesToShow.includes("projects") ?
+                        <Grid item md={4} sm={6} xs={12}>
+                            <Paper className={classes.paper}>
+                                <Card
+                                    image={remiBesse}
+                                    title="Remi Besse"
+                                    alt="Remi Besse"
+                                    text="Remi Besse, French artist, moviemaker and photographer (ancienne version)"
+                                    tools="React.js, Material.UI & Framer"
+                                    heroku="http://victoirebaron.com/remibesse/#/home"
                                     locked={false}
                                 />
                             </Paper>
