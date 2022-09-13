@@ -22,8 +22,8 @@
     "react-scroll": "^1.7.16"
   },
   "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
+    "start": "react-scripts --openssl-legacy-provider start",
+    "build": "react-scripts --openssl-legacy-provider build",
     "test": "react-scripts test",
     "predeploy": "npm run build",
     "deploy": "gh-pages -d build -r https://github.com/Victoire44/victoire44.github.io.git -b master",
